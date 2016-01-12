@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
+title: 厘澄 的小站
+subtitle: 厘澄 的小站
+description: 厘澄，专注web前端开发
+author: 厘澄
+language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://www.liushaohua.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
