@@ -660,7 +660,7 @@ a.article-title:hover {
 }
 .article-entry .caption {
   color: #999;
-  display: block;
+  display: none;
   font-size: 0.9em;
   margin-top: 0.5em;
   position: relative;
