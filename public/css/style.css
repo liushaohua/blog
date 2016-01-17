@@ -607,6 +607,12 @@ a.article-title:hover {
   display: block;
   margin: auto;
 }
+
+.article-entry  img{
+	display:inline-block;
+	vertical-align:bottom;
+}
+
 .article-entry iframe {
   border: none;
 }
