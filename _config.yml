@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 厘澄 的小站
-subtitle: 厘澄 的小站
+title: 厘澄的小站
+subtitle: 厘澄的小站
 description: 厘澄，专注web前端开发
 author: 厘澄
 language: zh-CN
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: yilia
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
