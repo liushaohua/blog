@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>厘澄 的小站</title>
+  <title>为你的网站升级HTTP/2 | 厘澄 的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="厘澄，专注web前端开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="厘澄 的小站">
-<meta property="og:url" content="http://www.liushaohua.cn/index.html">
+  <meta name="description" content="关于http/2被炒火已经有一段日子了，并且已经有许多站点争相追逐使用，去年5月终于定稿发布了，作为一个不热爱学习的前端狗，已经比那些热爱学习的大神们晚了近一年，是时候折腾一下子了，不然老了是真的动不了了。早些年Nginx发布了一个early-alpha patch模块来对HTTP/2进行支持，从1.9.5开始ttpv2module 替换了 ngxhttpspdy_module 正式全面的对HTT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为你的网站升级HTTP/2">
+<meta property="og:url" content="http://www.liushaohua.cn/2016/01/21/为你的网站升级http-2/index.html">
 <meta property="og:site_name" content="厘澄 的小站">
-<meta property="og:description" content="厘澄，专注web前端开发">
+<meta property="og:description" content="关于http/2被炒火已经有一段日子了，并且已经有许多站点争相追逐使用，去年5月终于定稿发布了，作为一个不热爱学习的前端狗，已经比那些热爱学习的大神们晚了近一年，是时候折腾一下子了，不然老了是真的动不了了。早些年Nginx发布了一个early-alpha patch模块来对HTTP/2进行支持，从1.9.5开始ttpv2module 替换了 ngxhttpspdy_module 正式全面的对HTT">
+<meta property="og:updated_time" content="2016-01-21T08:30:00.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="厘澄 的小站">
-<meta name="twitter:description" content="厘澄，专注web前端开发">
+<meta name="twitter:title" content="为你的网站升级HTTP/2">
+<meta name="twitter:description" content="关于http/2被炒火已经有一段日子了，并且已经有许多站点争相追逐使用，去年5月终于定稿发布了，作为一个不热爱学习的前端狗，已经比那些热爱学习的大神们晚了近一年，是时候折腾一下子了，不然老了是真的动不了了。早些年Nginx发布了一个early-alpha patch模块来对HTTP/2进行支持，从1.9.5开始ttpv2module 替换了 ngxhttpspdy_module 正式全面的对HTT">
   
     <link rel="alternative" href="/atom.xml" title="厘澄 的小站" type="application/atom+xml">
   
@@ -63,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-为你的网站升级http-2" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-为你的网站升级http-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/21/为你的网站升级http-2/" class="article-date">
   <time datetime="2016-01-21T07:45:34.000Z" itemprop="datePublished">2016-01-21</time>
@@ -78,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/21/为你的网站升级http-2/">为你的网站升级HTTP/2</a>
+    <h1 class="article-title" itemprop="name">
+      为你的网站升级HTTP/2
     </h1>
   
 
@@ -110,95 +109,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-new一个hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/12/new一个hexo/" class="article-date">
-  <time datetime="2016-01-12T01:28:43.000Z" itemprop="datePublished">2016-01-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/12/new一个hexo/">new一个hexo</a>
-    </h1>
+    <a href="/2016/01/12/new一个hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">new一个hexo</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&emsp;&emsp;时隔多年，我终于又开始用个人网站了，记得当年第一次用的时候是2011年，为了找工作购买了域名<a href="http://www.hinlary" target="_blank" rel="external">www.hinlary.com</a>，还购买了廉价服务器,一个月也就10几20几块吧，当时只是放了静态页面上去，后续找到工作后就没有在用过，空间到期了懒得续了，域名到是续过2次就再没续过，随后也是过期了，后来又过了不知多久，闲来无事就注册了现在这个域名，买了个相对便宜的香港主机150一年，就在上面搭了WordPress写过几篇博文过了1年主机到期了又不了了之了，总之就是坚持不下来~14年左右吧看大家用github，我也跟风搞了一发，搭建了个github-page,随意放了点静态页面，也是懒的原因，浑浑噩噩的度过了15年，先后换了几台电脑，由DELL换成了mac，又换回了公司配的DELL，加上自己存放东西毫无规律，这么些年写的代码都找不到了，也是醉的不行了~桑不起的前端狗撒~~~  !</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.liushaohua.cn/2016/01/12/new一个hexo/" data-id="cijnzl9ip0006qc9ibl82lsco" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人随笔/">个人随笔</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/01/11/hello-world/" class="article-date">
-  <time datetime="2016-01-11T09:33:50.679Z" itemprop="datePublished">2016-01-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/11/hello-world/">Hello World test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.liushaohua.cn/2016/01/11/hello-world/" data-id="cijnzl9ht0000qc9iygc0l6pu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
 </section>
         
           <aside id="sidebar">
