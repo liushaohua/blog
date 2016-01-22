@@ -103,11 +103,7 @@
 							
 								<a class="github" target="_blank" href="https://github.com/liushaohua" title="github">github</a>
 					        
-								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
-					        
-								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
-					        
-								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+								<a class="mail" target="_blank" href="/fe.liushaohua@gmail.com" title="mail">mail</a>
 					        
 						</div>
 					</nav>
@@ -188,11 +184,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/liushaohua" title="github">github</a>
 			        
-						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
-			        
-						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
-			        
-						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+						<a class="mail" target="_blank" href="/fe.liushaohua@gmail.com" title="mail">mail</a>
 			        
 				</div>
 			</nav>
@@ -201,6 +193,62 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/22/hello-world/" class="article-date">
+  	<time datetime="2016-01-22T01:42:18.122Z" itemprop="datePublished">2016-01-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/22/hello-world/">Hello World test</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/22/hello-world/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-为你的网站升级http-2" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -228,18 +276,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于http/2被炒火已经有一段日子了，并且已经有许多站点争相追逐使用，去年5月终于定稿发布了，作为一个不热爱<code>学习</code>的前端狗，已经比那些热爱学习的大神们晚了近一年，是时候<code>折腾</code>一下子了，不然<code>老了</code>是真的动不了了。<br>早些年Nginx发布了一个<code>early-alpha patch</code>模块来对HTTP/2进行支持，从1.9.5开始<code>ttpv2module</code> 替换了 <code>ngxhttpspdy_module</code> 正式全面的对HTTP/2支持。</p>
-<h3 id="SSL_u90E8_u7F72"><a href="#SSL_u90E8_u7F72" class="headerlink" title="SSL部署"></a>SSL部署</h3><p>SSL有几款是免费的，生成证书后<code>listen 443</code>即可;</p>
-<h3 id="u5B89_u88C5/_u5347_u7EA7Nginx"><a href="#u5B89_u88C5/_u5347_u7EA7Nginx" class="headerlink" title="安装/升级Nginx"></a>安装/升级Nginx</h3><p>如果你服务器的Nginx版本<code>太低</code>，必须要升级下<br>修改<code>/etc/yum.repos.d/nginx.repo</code>的nginx仓库地址<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nginx]</span><br><span class="line">name=nginx repo  </span><br><span class="line">baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/  </span><br><span class="line">gpgcheck=0  </span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure></p>
-<p>没安装Nginx的话 <code>yum install nginx</code>，已经安装了的话，就可以 <code>yum clean all &amp;&amp; yum update nginx</code>进行升级。</p>
-<h3 id="u68C0_u6D4BNginx_u7248_u672C_u81F3_u5C11_u89811-9-5_u4EE5_u4E0A"><a href="#u68C0_u6D4BNginx_u7248_u672C_u81F3_u5C11_u89811-9-5_u4EE5_u4E0A" class="headerlink" title="检测Nginx版本至少要1.9.5以上"></a>检测Nginx版本至少要1.9.5以上</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nginx -v</span><br><span class="line">nginx version: nginx/<span class="number">1.9</span>.<span class="number">9</span></span><br></pre></td></tr></table></figure>
-<h3 id="Nginx_u542F_u52A8"><a href="#Nginx_u542F_u52A8" class="headerlink" title="Nginx启动"></a>Nginx启动</h3><p>只需要修改<code>nginx.conf</code>中的配置<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">server</span> &#123;  </span><br><span class="line">  <span class="title">listen</span>        <span class="number">443</span> ssl http2; </span><br><span class="line">  <span class="title">server_name</span>   liushaohua.cn;</span><br><span class="line"></span><br><span class="line">  <span class="comment">#SSL配置</span></span><br><span class="line">  <span class="title">ssl</span>                   <span class="built_in">on</span>;</span><br><span class="line">  <span class="title">ssl_certificate</span>       /etc/nginx/conf.d/certificate.crt;</span><br><span class="line">  <span class="title">ssl_certificate_key</span>   /etc/nginx/conf.d/certificate.key;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><code>listen 443 ssl http2</code></p>
-<h3 id="u5F3A_u5236https"><a href="#u5F3A_u5236https" class="headerlink" title="强制https"></a>强制https</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">if</span> (<span class="variable">$server_port</span> = <span class="number">80</span>) &#123;</span><br><span class="line">	<span class="title">rewrite</span><span class="regexp"> ^(.*)$</span> <span class="url">https://<span class="variable">$host</span><span class="variable">$1</span></span> <span class="built_in">permanent</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="u91CD_u542F"><a href="#u91CD_u542F" class="headerlink" title="重启"></a>重启</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">nginx</span> -s reload</span><br><span class="line">netstat -apnt | grep <span class="number">443</span></span><br></pre></td></tr></table></figure>
-<p>如果显示为下面这样<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">tcp</span>        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0.0.0:443</span>             <span class="number">0.0.0.0</span>:*               LISTEN      <span class="number">7255</span>/nginx: master</span><br></pre></td></tr></table></figure></p>
-<p>访问下你的网站，打开开发者工具，看看<code>Protocol</code>是否返回了h2,返回了的话就ok了~~</p>
-
+        <p>关于http/2被炒火已经有一段日子了，并且已经有许多站点争相追逐使用，去年5月终于定稿发布了，作为一个不热爱<code>学习</code>的前端狗，已经比那些热爱学习的大神们晚了近一年，是时候<code>折腾</code>一下子了，不然<code>老了</code>是真的动不了了。<br>早些年Nginx发布了一个<code>early-alpha patch</code>模块来对HTTP/2进行支持，从1.9.5开始<code>ttpv2module</code> 替换了 <code>ngxhttpspdy_module</code> 正式全面的对HTTP/2支持。<br>
       
     </div>
     
@@ -252,6 +289,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/21/为你的网站升级http-2/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -307,67 +348,6 @@
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人随笔/">个人随笔</a></li></ul>
 	</div>
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/11/hello-world/" class="article-date">
-  	<time datetime="2016-01-11T09:33:50.679Z" itemprop="datePublished">2016-01-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/11/hello-world/">Hello World test</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
       
 
       

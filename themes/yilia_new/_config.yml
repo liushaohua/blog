@@ -7,11 +7,11 @@ menu:
 # SubNav
 subnav:
   github: "https://github.com/liushaohua"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  #weibo: "#"
+  #rss: "#"
+  #zhihu: "#"
   #douban: "#"
-  #mail: "#"
+  mail: "fe.liushaohua@gmail.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
