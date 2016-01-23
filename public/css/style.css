@@ -1117,6 +1117,17 @@ a {
   text-align: center;
   z-index: 1;
 }
+
+
+#busuanzi_container_page_pv{
+  font-size: 14px;
+  color: #aaa;
+  vertical-align: top;
+  display: inline-block;
+  margin-top: -2px;
+  float: right;
+  margin-right: 142px;
+}
 .article-meta time {
   color: #aaa;
 }
