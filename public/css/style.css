@@ -351,6 +351,9 @@ a {
   }
   span#busuanzi_container_page_pv{
 	  display:none;
+	  position: absolute;
+	  top: -999px;
+	  opacity: 0;
   }
   #container .article .article-meta .article-date {
     font-size: 12px;
