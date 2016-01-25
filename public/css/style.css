@@ -349,7 +349,7 @@ a {
     margin-top: -5px;
     position: ralative;
   }
-  #busuanzi_container_page_pv{
+  span#busuanzi_container_page_pv{
 	  display:none;
   }
   #container .article .article-meta .article-date {
