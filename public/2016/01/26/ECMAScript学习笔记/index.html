@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2016/1 | 厘澄的小站</title>
+  <title>ECMAScript学习笔记 | 厘澄的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="厘澄，专注web前端开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="厘澄的小站">
-<meta property="og:url" content="http://www.liushaohua.cn/archives/2016/01/index.html">
+  <meta name="description" content="ECMAScript做前端的同学都不会陌生，去年中Ecma国际大会宣布正式批准ECMA-262第6版，亦即ECMAScript 2015（曾用名：ECMAScript 6、ES6）的语言规范。ES6对于ES5是进行了相当大的改进，增加了许许多多的新特性，使得JavaScript看上去不再那么渣，目前还没有一款支持全部ES6新特性的的服务代理(浏览器+服务器端)，目前我们能做到的就是把ES6代码转译">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECMAScript学习笔记">
+<meta property="og:url" content="http://www.liushaohua.cn/2016/01/26/ECMAScript学习笔记/index.html">
 <meta property="og:site_name" content="厘澄的小站">
-<meta property="og:description" content="厘澄，专注web前端开发">
+<meta property="og:description" content="ECMAScript做前端的同学都不会陌生，去年中Ecma国际大会宣布正式批准ECMA-262第6版，亦即ECMAScript 2015（曾用名：ECMAScript 6、ES6）的语言规范。ES6对于ES5是进行了相当大的改进，增加了许许多多的新特性，使得JavaScript看上去不再那么渣，目前还没有一款支持全部ES6新特性的的服务代理(浏览器+服务器端)，目前我们能做到的就是把ES6代码转译">
+<meta property="og:updated_time" content="2016-01-26T07:40:07.615Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="厘澄的小站">
-<meta name="twitter:description" content="厘澄，专注web前端开发">
+<meta name="twitter:title" content="ECMAScript学习笔记">
+<meta name="twitter:description" content="ECMAScript做前端的同学都不会陌生，去年中Ecma国际大会宣布正式批准ECMA-262第6版，亦即ECMAScript 2015（曾用名：ECMAScript 6、ES6）的语言规范。ES6对于ES5是进行了相当大的改进，增加了许许多多的新特性，使得JavaScript看上去不再那么渣，目前还没有一款支持全部ES6新特性的的服务代理(浏览器+服务器端)，目前我们能做到的就是把ES6代码转译">
   
     <link rel="alternative" href="/atom.xml" title="厘澄的小站" type="application/atom+xml">
   
@@ -192,142 +193,76 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-ECMAScript学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/26/ECMAScript学习笔记/" class="archive-article-date">
-	<time datetime="2016-01-26T06:13:51.000Z" itemprop="datePublished">1月 26</time>
+    <div class="article-meta">
+      <a href="/2016/01/26/ECMAScript学习笔记/" class="article-date">
+	<time datetime="2016-01-26T06:13:51.000Z" itemprop="datePublished">2016-01-26</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/26/ECMAScript学习笔记/">ECMAScript学习笔记</a>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ECMAScript学习笔记&nbsp;&nbsp;<span id="busuanzi_container_page_pv">阅读量：<span id="busuanzi_value_page_pv"></span></span>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAScript/">ECMAScript</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ECMAScript做前端的同学都不会陌生，去年中Ecma国际大会宣布正式批准ECMA-262第6版，亦即ECMAScript 2015（曾用名：ECMAScript 6、ES6）的语言规范。ES6对于ES5是进行了相当大的改进，增加了许许多多的新特性，使得JavaScript<code>看上去</code>不再那么<code>渣</code>，目前还没有一款支持全部ES6新特性的的服务代理(浏览器+服务器端)，目前我们能做到的就是把ES6代码转译成ES5的代码，小道消息说主流浏览器完全实现ES6特性大概需要一年左右时间，毕竟不是官方发出的，要是2年没支持，咱也没办法不是。</p>
+<a id="more"></a>
+<p>由简入深，实践运用下</p>
+<h3 id="let_const_u547D_u4EE4"><a href="#let_const_u547D_u4EE4" class="headerlink" title="let const命令"></a>let const命令</h3><ul>
+<li><code>let</code>类此于<code>var</code>，用来声明<code>块级作用域</code>变量，并且不允许重复声明</li>
+<li><code>const</code>是用来定义常量，何为常量？<code>一棵树上吊死</code>，也不允许重复声明</li>
+</ul>
+<p><strong>let代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">123</span>;</span><br><span class="line">    <span class="comment">//a 123</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//a 报错</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>const代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> WIDTH = <span class="number">45</span>;</span><br><span class="line">WIDTH = <span class="number">50</span>；</span><br><span class="line"><span class="comment">//WIDTH 45</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/21/为你的网站升级http-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">为你的网站升级HTTP/2</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/21/为你的网站升级http-2/" class="archive-article-date">
-	<time datetime="2016-01-21T07:45:34.000Z" itemprop="datePublished">1月 21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/21/为你的网站升级http-2/">为你的网站升级HTTP/2</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/12/new一个hexo/" class="archive-article-date">
-	<time datetime="2016-01-12T01:28:43.000Z" itemprop="datePublished">1月 12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/12/new一个hexo/">new一个hexo</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人随笔/">个人随笔</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/01/hello-world/" class="archive-article-date">
-	<time datetime="2016-01-01T06:13:51.000Z" itemprop="datePublished">1月 1</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/01/hello-world/">Hello World test</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 </div>
       <footer id="footer">
@@ -352,8 +287,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
