@@ -29,3 +29,87 @@ ECMAScript做前端的同学都不会陌生，去年中Ecma国际大会宣布正
     //WIDTH 45
 ```
 
+### async await
+- 关于`异步编程`，有多种方法，利弊就不多说了
+    - callback
+    - 事件监听
+    - 观察者
+    - Promise
+- ES6/7提供了终极的解决方案`async await`
+- 有些特性必须要借助`polyfill/runtime`才能使用
+- `并行处理` - 使用 `async/await` 来处理异步时，是串行执行的。但很多场景下我们需要并行处理，这样可以大大提高执行效率，此时可以结合 Promise.all 来处理。
+
+**async await代码事例:**
+```javascript
+    let asyncReadFile = async function (){
+      let f1 = await readFile(path.normalize(__dirname + '/003.js'));
+      let f2 = await readFile(path.normalize(__dirname + '/003.js'));
+      console.log(f1.toString());
+      console.log(f2.toString());
+    };
+    let result = asyncReadFile();
+
+    //并行处理
+    async indexAction(){
+        let p1 = this.getServiceData1();
+        let p2 = this.getAPIData2();
+        let [p1Data, p2Data] = await Promise.all([p1, p2]);
+    }
+```
+
+### export import
+- 模块之间的相互调用关系是通过 export 来规定模块对外暴露的接口，通过import来引用其它模块提供的接口。同时还为模块创造了命名空间，防止函数的命名冲突
+- 定义好模块的输出以后就可以在另外一个模块通过import引用
+
+**export代码事例:**
+```javascript
+     //test.js
+     var name = 'Rainbow';
+     var age = '24';
+     export {name, age};
+
+    //test.js
+    export function getName() {
+     return name;
+    }
+    export function getAge(){
+    return age;
+    }
+
+    //test.js default 导出
+    export default function getAge() {}
+
+    // 或者写成
+    function getAge() {}
+    export default getAge;
+```
+
+**import代码事例:**
+```javascript
+    //index.js
+    import {name, age} from './test.js'
+
+    //index.js
+    import * as test form './test.js';  //import * as 就完成了模块整体的导入
+
+    //index.js
+    // 导入的时候不需要花括号
+    import test from './test.js';
+```
+
+### class
+- Class之间可以通过extends关键字，实现继承，这比ES5的通过修改原型链实现继承，要清晰和方便很多
+
+```javascript
+    class ColorPoint extends Point {
+
+      constructor(x, y, color) {
+        super(x, y); // 等同于parent.constructor(x, y)
+        this.color = color;
+      }
+
+      toString() {
+        return this.color + ' ' + super.toString(); // 等同于parent.toString()
+      }
+    }
+```

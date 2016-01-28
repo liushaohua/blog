@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://www.liushaohua.cn/2016/01/26/ECMAScript学习笔记/index.html">
 <meta property="og:site_name" content="厘澄的小站">
 <meta property="og:description" content="ECMAScript做前端的同学都不会陌生，去年中Ecma国际大会宣布正式批准ECMA-262第6版，亦即ECMAScript 2015（曾用名：ECMAScript 6、ES6）的语言规范。ES6对于ES5是进行了相当大的改进，增加了许许多多的新特性，使得JavaScript看上去不再那么渣，目前还没有一款支持全部ES6新特性的的服务代理(浏览器+服务器端)，目前我们能做到的就是把ES6代码转译">
-<meta property="og:updated_time" content="2016-01-26T07:40:07.615Z">
+<meta property="og:updated_time" content="2016-01-27T07:55:15.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript学习笔记">
 <meta name="twitter:description" content="ECMAScript做前端的同学都不会陌生，去年中Ecma国际大会宣布正式批准ECMA-262第6版，亦即ECMAScript 2015（曾用名：ECMAScript 6、ES6）的语言规范。ES6对于ES5是进行了相当大的改进，增加了许许多多的新特性，使得JavaScript看上去不再那么渣，目前还没有一款支持全部ES6新特性的的服务代理(浏览器+服务器端)，目前我们能做到的就是把ES6代码转译">
@@ -74,13 +74,13 @@
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Тэги</li>
+						<li>菜单</li>
+						<li>標籤</li>
 						
-						<li>Links</li>
+						<li>友情链接</li>
 						
 						
-						<li>О сайте</li>
+						<li>關於</li>
 						
 					</ul>
 				</div>
@@ -237,7 +237,29 @@
 </ul>
 <p><strong>let代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">123</span>;</span><br><span class="line">    <span class="comment">//a 123</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//a 报错</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>const代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> WIDTH = <span class="number">45</span>;</span><br><span class="line">WIDTH = <span class="number">50</span>；</span><br><span class="line"><span class="comment">//WIDTH 45</span></span><br></pre></td></tr></table></figure></p>
-
+<h3 id="async_await"><a href="#async_await" class="headerlink" title="async await"></a>async await</h3><ul>
+<li>关于<code>异步编程</code>，有多种方法，利弊就不多说了<ul>
+<li>callback</li>
+<li>事件监听</li>
+<li>观察者</li>
+<li>Promise</li>
+</ul>
+</li>
+<li>ES6/7提供了终极的解决方案<code>async await</code></li>
+<li>有些特性必须要借助<code>polyfill/runtime</code>才能使用</li>
+<li><code>并行处理</code> - 使用 <code>async/await</code> 来处理异步时，是串行执行的。但很多场景下我们需要并行处理，这样可以大大提高执行效率，此时可以结合 Promise.all 来处理。</li>
+</ul>
+<p><strong>async await代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> asyncReadFile = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> f1 = <span class="keyword">await</span> readFile(path.normalize(__dirname + <span class="string">'/003.js'</span>));</span><br><span class="line">  <span class="keyword">let</span> f2 = <span class="keyword">await</span> readFile(path.normalize(__dirname + <span class="string">'/003.js'</span>));</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> result = asyncReadFile();</span><br><span class="line"></span><br><span class="line"><span class="comment">//并行处理</span></span><br><span class="line"><span class="keyword">async</span> indexAction()&#123;</span><br><span class="line">    <span class="keyword">let</span> p1 = <span class="keyword">this</span>.getServiceData1();</span><br><span class="line">    <span class="keyword">let</span> p2 = <span class="keyword">this</span>.getAPIData2();</span><br><span class="line">    <span class="keyword">let</span> [p1Data, p2Data] = <span class="keyword">await</span> <span class="built_in">Promise</span>.all([p1, p2]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="export_import"><a href="#export_import" class="headerlink" title="export import"></a>export import</h3><ul>
+<li>模块之间的相互调用关系是通过 export 来规定模块对外暴露的接口，通过import来引用其它模块提供的接口。同时还为模块创造了命名空间，防止函数的命名冲突</li>
+<li>定义好模块的输出以后就可以在另外一个模块通过import引用</li>
+</ul>
+<p><strong>export代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//test.js</span></span><br><span class="line"> <span class="keyword">var</span> name = <span class="string">'Rainbow'</span>;</span><br><span class="line"> <span class="keyword">var</span> age = <span class="string">'24'</span>;</span><br><span class="line"> <span class="keyword">export</span> &#123;name, age&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//test.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//test.js default 导出</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者写成</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> getAge;</span><br></pre></td></tr></table></figure></p>
+<p><strong>import代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;name, age&#125; <span class="keyword">from</span> <span class="string">'./test.js'</span></span><br><span class="line"></span><br><span class="line">//index.js</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> test form <span class="string">'./test.js'</span>;  <span class="comment">//import * as 就完成了模块整体的导入</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="comment">// 导入的时候不需要花括号</span></span><br><span class="line"><span class="keyword">import</span> test <span class="keyword">from</span> <span class="string">'./test.js'</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><ul>
+<li>Class之间可以通过extends关键字，实现继承，这比ES5的通过修改原型链实现继承，要清晰和方便很多</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  constructor(x, y, color) &#123;</span><br><span class="line">    <span class="keyword">super</span>(x, y); <span class="comment">// 等同于parent.constructor(x, y)</span></span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color + <span class="string">' '</span> + <span class="keyword">super</span>.toString(); <span class="comment">// 等同于parent.toString()</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     

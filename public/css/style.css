@@ -337,6 +337,9 @@ a {
     padding-right: 0;
     padding-top: 10px;
   }
+  #container .article #busuanzi_container_page_pv {
+    display: none;
+  }
   #container .article .article-title {
     font-size: 18px;
     max-width: 185px;
@@ -348,12 +351,6 @@ a {
     height: 30px;
     margin-top: -5px;
     position: ralative;
-  }
-  span#busuanzi_container_page_pv{
-	  display:none;
-	  position: absolute;
-	  top: -999px;
-	  opacity: 0;
   }
   #container .article .article-meta .article-date {
     font-size: 12px;
