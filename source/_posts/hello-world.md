@@ -1,5 +1,5 @@
 title: Hello World test
-date: 2016-01-01 14:13:51
+date: 2015-07-01 14:13:51
 ---
 Welcome to [Hexo](http://hexo.io/)! This is your very first post. Check [documentation](http://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](http://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
