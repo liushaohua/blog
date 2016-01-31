@@ -8,16 +8,14 @@ menu:
 subnav:
   github: "https://github.com/liushaohua"
   #weibo: "#"
-  #rss: "#"
+  rss: /atom.xml
   #zhihu: "#"
   #douban: "#"
-  mail: "fe.liushaohua@gmail.com"
+  mail: "mailto:fe.liushaohua@gmail.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
   #linkedin: "#"
-
-rss: /atom.xml
 
 # Content
 excerpt_link: more
@@ -50,12 +48,9 @@ tagcloud: true
 #friends: false
 #开启——
 friends:
-  奥巴马的博客: http://localhost:4000/
-  卡卡的美丽传说: http://localhost:4000/
-  本泽马的博客: http://localhost:4000/
-  吉格斯的博客: http://localhost:4000/
-  习大大大不同: http://localhost:4000/
-  托蒂的博客: http://localhost:4000/
+  张鑫旭: http://www.zhangxinxu.com/
+  淘宝UED: http://ued.taobao.org/
+  屈屈博客: https://imququ.com/
 
 #是否开启“关于我”。
 #不开启——

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[厘澄的小站]]></title>
+  <subtitle><![CDATA[厘澄的小站]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://www.liushaohua.cn/"/>
+  <updated>2016-01-27T07:55:15.194Z</updated>
+  <id>http://www.liushaohua.cn/</id>
+  
+  <author>
+    <name><![CDATA[厘澄]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ECMAScript学习笔记]]></title>
+    <link href="http://www.liushaohua.cn/2016/01/26/ECMAScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://www.liushaohua.cn/2016/01/26/ECMAScript学习笔记/</id>
+    <published>2016-01-26T06:13:51.000Z</published>
+    <updated>2016-01-27T07:55:15.194Z</updated>
+    <content type="html"><![CDATA[<p>ECMAScript做前端的同学都不会陌生，去年中Ecma国际大会宣布正式批准ECMA-262第6版，亦即ECMAScript 2015（曾用名：ECMAScript 6、ES6）的语言规范。ES6对于ES5是进行了相当大的改进，增加了许许多多的新特性，使得JavaScript<code>看上去</code>不再那么<code>渣</code>，目前还没有一款支持全部ES6新特性的的服务代理(浏览器+服务器端)，目前我们能做到的就是把ES6代码转译成ES5的代码，小道消息说主流浏览器完全实现ES6特性大概需要一年左右时间，毕竟不是官方发出的，要是2年没支持，咱也没办法不是。</p>
+<a id="more"></a>
+<p>由简入深，实践运用下</p>
+<h3 id="let_const_u547D_u4EE4"><a href="#let_const_u547D_u4EE4" class="headerlink" title="let const命令"></a>let const命令</h3><ul>
+<li><code>let</code>类此于<code>var</code>，用来声明<code>块级作用域</code>变量，并且不允许重复声明</li>
+<li><code>const</code>是用来定义常量，何为常量？<code>一棵树上吊死</code>，也不允许重复声明</li>
+</ul>
+<p><strong>let代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">123</span>;</span><br><span class="line">    <span class="comment">//a 123</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//a 报错</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>const代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> WIDTH = <span class="number">45</span>;</span><br><span class="line">WIDTH = <span class="number">50</span>；</span><br><span class="line"><span class="comment">//WIDTH 45</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="async_await"><a href="#async_await" class="headerlink" title="async await"></a>async await</h3><ul>
+<li>关于<code>异步编程</code>，有多种方法，利弊就不多说了<ul>
+<li>callback</li>
+<li>事件监听</li>
+<li>观察者</li>
+<li>Promise</li>
+</ul>
+</li>
+<li>ES6/7提供了终极的解决方案<code>async await</code></li>
+<li>有些特性必须要借助<code>polyfill/runtime</code>才能使用</li>
+<li><code>并行处理</code> - 使用 <code>async/await</code> 来处理异步时，是串行执行的。但很多场景下我们需要并行处理，这样可以大大提高执行效率，此时可以结合 Promise.all 来处理。</li>
+</ul>
+<p><strong>async await代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> asyncReadFile = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> f1 = <span class="keyword">await</span> readFile(path.normalize(__dirname + <span class="string">'/003.js'</span>));</span><br><span class="line">  <span class="keyword">let</span> f2 = <span class="keyword">await</span> readFile(path.normalize(__dirname + <span class="string">'/003.js'</span>));</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> result = asyncReadFile();</span><br><span class="line"></span><br><span class="line"><span class="comment">//并行处理</span></span><br><span class="line"><span class="keyword">async</span> indexAction()&#123;</span><br><span class="line">    <span class="keyword">let</span> p1 = <span class="keyword">this</span>.getServiceData1();</span><br><span class="line">    <span class="keyword">let</span> p2 = <span class="keyword">this</span>.getAPIData2();</span><br><span class="line">    <span class="keyword">let</span> [p1Data, p2Data] = <span class="keyword">await</span> <span class="built_in">Promise</span>.all([p1, p2]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="export_import"><a href="#export_import" class="headerlink" title="export import"></a>export import</h3><ul>
+<li>模块之间的相互调用关系是通过 export 来规定模块对外暴露的接口，通过import来引用其它模块提供的接口。同时还为模块创造了命名空间，防止函数的命名冲突</li>
+<li>定义好模块的输出以后就可以在另外一个模块通过import引用</li>
+</ul>
+<p><strong>export代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//test.js</span></span><br><span class="line"> <span class="keyword">var</span> name = <span class="string">'Rainbow'</span>;</span><br><span class="line"> <span class="keyword">var</span> age = <span class="string">'24'</span>;</span><br><span class="line"> <span class="keyword">export</span> &#123;name, age&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//test.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//test.js default 导出</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者写成</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> getAge;</span><br></pre></td></tr></table></figure></p>
+<p><strong>import代码事例:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;name, age&#125; <span class="keyword">from</span> <span class="string">'./test.js'</span></span><br><span class="line"></span><br><span class="line">//index.js</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> test form <span class="string">'./test.js'</span>;  <span class="comment">//import * as 就完成了模块整体的导入</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="comment">// 导入的时候不需要花括号</span></span><br><span class="line"><span class="keyword">import</span> test <span class="keyword">from</span> <span class="string">'./test.js'</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><ul>
+<li>Class之间可以通过extends关键字，实现继承，这比ES5的通过修改原型链实现继承，要清晰和方便很多</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  constructor(x, y, color) &#123;</span><br><span class="line">    <span class="keyword">super</span>(x, y); <span class="comment">// 等同于parent.constructor(x, y)</span></span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color + <span class="string">' '</span> + <span class="keyword">super</span>.toString(); <span class="comment">// 等同于parent.toString()</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p>ECMAScript做前端的同学都不会陌生，去年中Ecma国际大会宣布正式批准ECMA-262第6版，亦即ECMAScript 2015（曾用名：ECMAScript 6、ES6）的语言规范。ES6对于ES5是进行了相当大的改进，增加了许许多多的新特性，使得JavaScript<code>看上去</code>不再那么<code>渣</code>，目前还没有一款支持全部ES6新特性的的服务代理(浏览器+服务器端)，目前我们能做到的就是把ES6代码转译成ES5的代码，小道消息说主流浏览器完全实现ES6特性大概需要一年左右时间，毕竟不是官方发出的，要是2年没支持，咱也没办法不是。</p>]]>
+    
+    </summary>
+    
+      <category term="ECMAScript" scheme="http://www.liushaohua.cn/tags/ECMAScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[为你的网站升级HTTP/2]]></title>
+    <link href="http://www.liushaohua.cn/2015/08/21/%E4%B8%BA%E4%BD%A0%E7%9A%84%E7%BD%91%E7%AB%99%E5%8D%87%E7%BA%A7http-2/"/>
+    <id>http://www.liushaohua.cn/2015/08/21/为你的网站升级http-2/</id>
+    <published>2015-08-21T07:45:34.000Z</published>
+    <updated>2016-01-31T01:22:40.366Z</updated>
+    <content type="html"><![CDATA[<p>关于http/2被炒火已经有一段日子了，并且已经有许多站点争相追逐使用，今年5月终于定稿发布了，作为一个不热爱<code>学习</code>的前端狗，已经比那些热爱学习的大神们晚了好久，是时候<code>折腾</code>一下子了，不然<code>老了</code>是真的动不了了。<br>早些年Nginx发布了一个<code>early-alpha patch</code>模块来对HTTP/2进行支持，从1.9.5开始<code>ttpv2module</code> 替换了 <code>ngxhttpspdy_module</code> 正式全面的对HTTP/2支持。<br><a id="more"></a></p>
+<h3 id="SSL_u90E8_u7F72"><a href="#SSL_u90E8_u7F72" class="headerlink" title="SSL部署"></a>SSL部署</h3><p>SSL有几款是免费的，生成证书后<code>listen 443</code>即可;</p>
+<h3 id="u5B89_u88C5/_u5347_u7EA7Nginx"><a href="#u5B89_u88C5/_u5347_u7EA7Nginx" class="headerlink" title="安装/升级Nginx"></a>安装/升级Nginx</h3><p>如果你服务器的Nginx版本<code>太低</code>，必须要升级下<br>修改<code>/etc/yum.repos.d/nginx.repo</code>的nginx仓库地址<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nginx]</span><br><span class="line">name=nginx repo  </span><br><span class="line">baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/  </span><br><span class="line">gpgcheck=0  </span><br><span class="line">enabled=1</span><br></pre></td></tr></table></figure></p>
+<p>没安装Nginx的话 <code>yum install nginx</code>，已经安装了的话，就可以 <code>yum clean all &amp;&amp; yum update nginx</code>进行升级。</p>
+<h3 id="u68C0_u6D4BNginx_u7248_u672C_u81F3_u5C11_u89811-9-5_u4EE5_u4E0A"><a href="#u68C0_u6D4BNginx_u7248_u672C_u81F3_u5C11_u89811-9-5_u4EE5_u4E0A" class="headerlink" title="检测Nginx版本至少要1.9.5以上"></a>检测Nginx版本至少要1.9.5以上</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nginx -v</span><br><span class="line">nginx version: nginx/<span class="number">1.9</span>.<span class="number">9</span></span><br></pre></td></tr></table></figure>
+<h3 id="Nginx_u542F_u52A8"><a href="#Nginx_u542F_u52A8" class="headerlink" title="Nginx启动"></a>Nginx启动</h3><p>只需要修改<code>nginx.conf</code>中的配置<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">server</span> &#123;  </span><br><span class="line">  <span class="title">listen</span>        <span class="number">443</span> ssl http2; </span><br><span class="line">  <span class="title">server_name</span>   liushaohua.cn;</span><br><span class="line"></span><br><span class="line">  <span class="comment">#SSL配置</span></span><br><span class="line">  <span class="title">ssl</span>                   <span class="built_in">on</span>;</span><br><span class="line">  <span class="title">ssl_certificate</span>       /etc/nginx/conf.d/certificate.crt;</span><br><span class="line">  <span class="title">ssl_certificate_key</span>   /etc/nginx/conf.d/certificate.key;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>listen 443 ssl http2</code></p>
+<h3 id="u5F3A_u5236https"><a href="#u5F3A_u5236https" class="headerlink" title="强制https"></a>强制https</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">if</span> (<span class="variable">$server_port</span> = <span class="number">80</span>) &#123;</span><br><span class="line">	<span class="title">rewrite</span><span class="regexp"> ^(.*)$</span> <span class="url">https://<span class="variable">$host</span><span class="variable">$1</span></span> <span class="built_in">permanent</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u91CD_u542F"><a href="#u91CD_u542F" class="headerlink" title="重启"></a>重启</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">nginx</span> -s reload</span><br><span class="line">netstat -apnt | grep <span class="number">443</span></span><br></pre></td></tr></table></figure>
+<p>如果显示为下面这样<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">tcp</span>        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0.0.0:443</span>             <span class="number">0.0.0.0</span>:*               LISTEN      <span class="number">7255</span>/nginx: master</span><br></pre></td></tr></table></figure></p>
+<p>访问下你的网站，打开开发者工具，看看<code>Protocol</code>是否返回了h2,返回了的话就ok了~~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>关于http/2被炒火已经有一段日子了，并且已经有许多站点争相追逐使用，今年5月终于定稿发布了，作为一个不热爱<code>学习</code>的前端狗，已经比那些热爱学习的大神们晚了好久，是时候<code>折腾</code>一下子了，不然<code>老了</code>是真的动不了了。<br>早些年Nginx发布了一个<code>early-alpha patch</code>模块来对HTTP/2进行支持，从1.9.5开始<code>ttpv2module</code> 替换了 <code>ngxhttpspdy_module</code> 正式全面的对HTTP/2支持。<br>]]>
+    
+    </summary>
+    
+      <category term="HTTP" scheme="http://www.liushaohua.cn/tags/HTTP/"/>
+    
+      <category term="Nginx" scheme="http://www.liushaohua.cn/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[new一个hexo]]></title>
+    <link href="http://www.liushaohua.cn/2015/07/12/new%E4%B8%80%E4%B8%AAhexo/"/>
+    <id>http://www.liushaohua.cn/2015/07/12/new一个hexo/</id>
+    <published>2015-07-12T01:28:43.000Z</published>
+    <updated>2016-01-31T01:21:57.243Z</updated>
+    <content type="html"><![CDATA[<p>&emsp;&emsp;时隔多年，我终于又开始用个人网站了，记得当年第一次用的时候是2011年，为了找工作购买了域名<a href="http://www.hinlary" target="_blank" rel="external">www.hinlary.com</a>，还购买了廉价服务器,一个月也就10几20几块吧，当时只是放了静态页面上去，后续找到工作后就没有在用过，空间到期了懒得续了，域名到是续过2次就再没续过，随后也是过期了，后来又过了不知多久，闲来无事就注册了现在这个域名，买了个相对便宜的香港主机150一年，就在上面搭了WordPress写过几篇博文过了1年主机到期了又不了了之了，总之就是坚持不下来~14年左右吧看大家用github，我也跟风搞了一发，搭建了个github-page,随意放了点静态页面，也是懒的原因，浑浑噩噩的度过了15年，先后换了几台电脑，由DELL换成了mac，又换回了公司配的DELL，加上自己存放东西毫无规律，这么些年写的代码都找不到了，也是醉的不行了~桑不起的前端狗撒~~~  !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>&emsp;&emsp;时隔多年，我终于又开始用个人网站了，记得当年第一次用的时候是2011年，为了找工作购买了域名<a href="http://www.hinlary" target="_blank" rel="external">www.hinlary.com</a>]]>
+    </summary>
+    
+      <category term="hexo" scheme="http://www.liushaohua.cn/tags/hexo/"/>
+    
+      <category term="个人随笔" scheme="http://www.liushaohua.cn/tags/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World test]]></title>
+    <link href="http://www.liushaohua.cn/2015/07/01/hello-world/"/>
+    <id>http://www.liushaohua.cn/2015/07/01/hello-world/</id>
+    <published>2015-07-01T06:13:51.000Z</published>
+    <updated>2016-01-31T01:21:11.218Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>]]>
+    
+    </summary>
+    
+  </entry>
+  
+</feed>
