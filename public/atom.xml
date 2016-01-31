@@ -4,7 +4,7 @@
   <subtitle><![CDATA[厘澄的小站]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.liushaohua.cn/"/>
-  <updated>2016-01-27T07:55:15.194Z</updated>
+  <updated>2016-01-31T04:32:38.725Z</updated>
   <id>http://www.liushaohua.cn/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[纪念我的2015年终总结]]></title>
+    <link href="http://www.liushaohua.cn/2016/01/31/%E7%BA%AA%E5%BF%B5%E6%88%91%E7%9A%842015%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    <id>http://www.liushaohua.cn/2016/01/31/纪念我的2015年终总结/</id>
+    <published>2016-01-31T03:48:31.000Z</published>
+    <updated>2016-01-31T04:32:38.725Z</updated>
+    <content type="html"><![CDATA[<p>关于<code>年终总结</code>这回事，我决的还是有<code>必要的</code>，虽然不是那么值得<code>几年</code>,但2015对我来说也是不<code>平凡</code>的一年，时间过得似乎是忽快忽慢，让人措手不及，简单的记录下，激励下自己。<br><a id="more"></a></p>
+<h3 id="1_u6708"><a href="#1_u6708" class="headerlink" title="1月"></a>1月</h3><p>1月貌似是没发生什么大事，当时我还住在<code>永泰庄</code>的自如小单间里，生活平淡工作开心</p>
+<h3 id="2_u6708"><a href="#2_u6708" class="headerlink" title="2月"></a>2月</h3><p>2月给人的印象是<code>过年月</code>，沉浸在年前、年中<code>鸡血不足</code>的状态</p>
+<h3 id="3_u6708"><a href="#3_u6708" class="headerlink" title="3月"></a>3月</h3><p>年后，离开了自己工作近1年半的地方，可能不到1年半，1年零2 3个月？来到了一家<code>创业</code>型公司，开启了一段新的旅程</p>
+<h3 id="4_u6708"><a href="#4_u6708" class="headerlink" title="4月"></a>4月</h3><p>4月似乎是自如租的房子到期了，搬到旁边不到100米的另外一个小两居的房子里（忘记是3月还是4月了），房子不大，不到60平，<code>3800</code>，厕所卫生间条件就略差了，一分钱一分价，工作也算正常，创业公司大部分都是加班会多一点，一般不会超过9点，同事关系还不错，不忙的时候还可以学习下，<code>node</code>和<code>mogo</code>都有提高。</p>
+<h3 id="5_u30016_u6708"><a href="#5_u30016_u6708" class="headerlink" title="5、6月"></a>5、6月</h3><p>具体记不清楚了，不知哪天上班的时候碰到一只小黑猫，带回了家，俺家也迎来了第二只小猫子，工作上发生一点小插曲，公司扩招的同时，开始有部分技术领导相继离职，后端也开始由PHP转向JAVA，<code>前端</code>还是比较稳定，还是不受重视~~ haha，和领导也有过相关沟通，不管孰是孰非，最终还是申请离职了，<code>6.23</code>号入职现公司。</p>
+<h3 id="7_u30018_u30019_u300110_u6708"><a href="#7_u30018_u30019_u300110_u6708" class="headerlink" title="7、8、9、10月"></a>7、8、9、10月</h3><p>已经适应现在的工作，住的地方又由永泰庄搬到了望京，上班骑自行车的话20分钟</p>
+<h3 id="11_u300112_u30011_u6708"><a href="#11_u300112_u30011_u6708" class="headerlink" title="11、12、1月"></a>11、12、1月</h3><p>转眼年底，部门的前端团队日益壮大，由之前的1个人变成了现在的7个人，工作流程步入正轨，团队里的同事们比较和谐，团队能力再一点点提高，由之前的PC慢慢的涉及到微信，混合应用，同事领导对我也算认可，自身有待提高的地方还很多，15年的技术成长还算缓慢，16年要加快步伐了，不然就掉队了， - -!又搬家了，搬到了<code>京旺家园</code>，<code>《芈月传》``陪</code>女友看完了，收获良多</p>
+<h3 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h3><p>15年对我来说算个沉淀，<code>芈月</code>中说的好<code>有多少付出，就有多少回报</code>,16年要把欠大家和欠自己的补回来，<code>努力工作和学习</code> - 自勉。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>关于<code>年终总结</code>这回事，我决的还是有<code>必要的</code>，虽然不是那么值得<code>几年</code>,但2015对我来说也是不<code>平凡</code>的一年，时间过得似乎是忽快忽慢，让人措手不及，简单的记录下，激励下自己。<br>]]>
+    
+    </summary>
+    
+      <category term="-年终总结" scheme="http://www.liushaohua.cn/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ECMAScript学习笔记]]></title>
