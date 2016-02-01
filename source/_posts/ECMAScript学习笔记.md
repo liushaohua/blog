@@ -15,6 +15,17 @@ ECMAScript做前端的同学都不会陌生，去年中Ecma国际大会宣布正
 
 **let代码事例:**
 ```javascript
+	for(var i = 0; i < 10; i++) {}
+	//i = 10 for和function不同，for中变量的作用域是上一级function或者全局，而function中变量的作用域是function内部，所以for循环后，i是继续存在的。
+
+	var a = [];
+	for (let i = 0; i < 10; i++) {
+	  a[i] = function () {
+		console.log(i);
+	  };
+	}
+	a[2](); // 2
+
     function () {
         let a = 123;
         //a 123

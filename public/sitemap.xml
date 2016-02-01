@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.liushaohua.cn/2016/01/26/ECMAScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2016-02-01T07:46:08.894Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.liushaohua.cn/2016/01/31/%E7%BA%AA%E5%BF%B5%E6%88%91%E7%9A%842015%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2016-01-31T04:46:23.931Z</lastmod>
   </url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://www.liushaohua.cn/2015/07/01/hello-world/</loc>
     <lastmod>2016-01-31T01:21:11.218Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.liushaohua.cn/2016/01/26/ECMAScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2016-01-27T07:55:15.194Z</lastmod>
   </url>
   
 </urlset>
