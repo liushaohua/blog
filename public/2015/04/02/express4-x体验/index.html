@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>express4.x体验 | 厘澄的小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="express4.x体验">
+<meta property="og:url" content="http://www.liushaohua.cn/2015/04/02/express4-x体验/index.html">
+<meta property="og:site_name" content="厘澄的小站">
+<meta property="og:description" content="Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。">
+<meta property="og:updated_time" content="2016-02-02T02:33:05.394Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="express4.x体验">
+<meta name="twitter:description" content="Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avatar.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">厘澄</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">厘澄的小站</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>標籤</li>
+						
+						<li>Links</li>
+						
+						
+						<li>關於</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/liushaohua" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="mail" target="_blank" href="mailto:fe.liushaohua@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ECMAScript/" style="font-size: 10px;">ECMAScript</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/个人随笔/" style="font-size: 10px;">个人随笔</a> <a href="/tags/年终总结/" style="font-size: 10px;">年终总结</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.zhangxinxu.com/">张鑫旭</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ued.taobao.org/">淘宝UED</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://imququ.com/">屈屈博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">厘澄</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/avatar.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">厘澄</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">厘澄的小站</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/liushaohua" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="mail" target="_blank" href="mailto:fe.liushaohua@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-express4-x体验" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/02/express4-x体验/" class="article-date">
+	<time datetime="2015-04-02T02:04:36.000Z" itemprop="datePublished">2015-04-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      express4.x体验&nbsp;&nbsp;<span id="busuanzi_container_page_pv">阅读量：<span id="busuanzi_value_page_pv"></span></span>
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/express/">express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。</p>
+<a id="more"></a>
+<h3 id="u5B89_u88C5"><a href="#u5B89_u88C5" class="headerlink" title="安装"></a>安装</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g express</span><br><span class="line">npm install -g express-generator</span><br><span class="line">express myBlog</span><br><span class="line">cd myBlog &amp;&amp; npm install</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<p>npm start 之后就跑起来了，打开浏览器localhost 3000端口 <a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a></p>
+<ul>
+<li><p>常用的express函数</p>
+<ul>
+<li><code>res.redirect(&#39;/&#39;)</code>; 重定向</li>
+<li><code>express -e myblog</code> 创建博客的时候使用ejs 默认为jade</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'/reg'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line"> 　　<span class="keyword">var</span> userName = req.body.username;   <span class="comment">//获取post后页面内的name</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>var session = require(&#39;express-session&#39;);</code>     //引入session  </p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用session</span></span><br><span class="line">app.use(session(&#123;</span><br><span class="line">	secret: <span class="string">'myblog'</span>,</span><br><span class="line">	resave: <span class="literal">false</span>,</span><br><span class="line">	saveUninitialized: <span class="literal">false</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>app.use(flash());</code>  //使用flash  </p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</span><br><span class="line">	res.locals.error = req.flash(<span class="string">'error'</span>).toString() || <span class="string">""</span>;</span><br><span class="line">	res.locals.success = req.flash(<span class="string">'success'</span>).toString() || <span class="string">""</span>;</span><br><span class="line">	res.locals.title = <span class="string">""</span>;</span><br><span class="line">	res.locals.count = <span class="number">0</span>;</span><br><span class="line">	res.locals.pageNum= <span class="number">0</span>;</span><br><span class="line">	res.locals.pageSize= <span class="number">0</span>;</span><br><span class="line">	res.locals.totalPage= <span class="number">0</span>;</span><br><span class="line">	res.locals.keyword=<span class="string">''</span>;</span><br><span class="line">	res.locals.user = req.session.user;</span><br><span class="line">	next();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//app.locals：这是一个函数对象，可以给它增加新的属性。程序内所有页面模板都能访问这个对象，所以可以用它保存全局配置变量供页面模板使用。</span></span><br><span class="line"><span class="comment">//调用方法</span></span><br><span class="line">&lt;%=title%&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">%=error%</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>再看下app.js      </p>
+<ul>
+<li><p>1.app.set(name,value)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//把名字为name的项的值设为value，用于设置参数</span></span><br><span class="line">app.set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>));</span><br><span class="line"><span class="comment">//设置了模版文件夹的路径；主要清楚__dirname的意思就可以了，它是node.js中的全局变量，表示取当前执行文件的路径</span></span><br><span class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'ejs'</span>);  <span class="comment">//设置使用的模版引擎，我们使用的ejs</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.app.use([path], function)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用这个方法来使用中间件，因为express依赖于connect，有大量的中间件，可以通过app.use来使用；</span></span><br><span class="line"><span class="comment">//path参数可以不填，默认为'/' (项目中用到的就不分别解释了，用到的时候自已查一API的中间件部分)</span></span><br><span class="line">app.use(express.static(path.join(__dirname, <span class="string">'public'</span>))); </span><br><span class="line"><span class="comment">//这一句中可能要注意一下，express.static( )是处理静态请求的，设置了public文件，</span></span><br><span class="line"><span class="comment">//public下所有文件都会以静态资料文件形式返回（如样式、脚本、图片素材等文件）</span></span><br><span class="line"><span class="keyword">var</span> routes = <span class="built_in">require</span>(<span class="string">'./routes/index'</span>);</span><br><span class="line"><span class="keyword">var</span> users = <span class="built_in">require</span>(<span class="string">'./routes/users'</span>);</span><br><span class="line">app.use(<span class="string">'/'</span>, routes);app.use(<span class="string">'/users'</span>, users);</span><br><span class="line"><span class="comment">//上面代码表示当用户使用/访问时，调用routes，即routes目录下的index.js文件，</span></span><br><span class="line"><span class="comment">//其中.js后缀省略，用/users访问时，调用routes目录下users.js文件</span></span><br><span class="line"><span class="comment">//这就是为什么，我们示例中用http://localhost:8100/访问时候，</span></span><br><span class="line"><span class="comment">//修改的index.js里的文件代码可以执行（当然index.js文件中也要写对应的代码，才能是我们最终看到的效果）</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.app.get(name)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">获取名为name的项的值</span><br><span class="line"><span class="keyword">if</span> (app.get(<span class="string">'env'</span>) === <span class="string">'development'</span>) &#123; </span><br><span class="line">	app.use(<span class="function"><span class="keyword">function</span>(<span class="params">err, req, res, next</span>) </span>&#123; </span><br><span class="line">		res.status(err.status || <span class="number">500</span>); </span><br><span class="line">		res.render(<span class="string">'error'</span>, &#123; message: err.message, error: err &#125;); </span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line">　　表示如果是开发环境，处理error时会输出堆栈信息</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.路由文件index.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">主要看下面这段代码</span><br><span class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123; </span><br><span class="line">	res.render(<span class="string">'index'</span>, &#123; </span><br><span class="line">		title: <span class="string">'&lt;h1&gt;Express&lt;/h1&gt;'</span> ,</span><br><span class="line">		users:[</span><br><span class="line">				&#123;username: <span class="string">'Wilson'</span>&#125;,</span><br><span class="line">				&#123;username: <span class="string">'Wilson Zhong'</span>&#125;, </span><br><span class="line">				&#123;username: <span class="string">'Zhong Wei'</span>&#125;</span><br><span class="line">		] </span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//这段表示，router.get表示通过get请求/时，响应后面的function处理，两个参数分别是request、response；</span></span><br><span class="line"><span class="comment">//res.render表示调用模版引擎解析名字index的模板，传并传入了title和users两个对象做为参数；</span></span><br><span class="line"><span class="comment">//为什么它会知道解板views目录下的index.ejs?而不是其它目录下的文件，或者后其它后缀名的文件？</span></span><br><span class="line"><span class="comment">//原因就是app.js中的设置：</span></span><br><span class="line">app.set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>));</span><br><span class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'ejs'</span>);</span><br><span class="line"><span class="comment">//而这两个参数在index.ejs中可以使用，那么加上ejs的部分，就会返回最终生成的页面展现！</span></span><br><span class="line"><span class="comment">//res.send("req.host获取主机名，req.path获取请求路径名!");</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.获取url参数 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">url：http:<span class="comment">//localhost:8888/select?name=a&amp;id=5</span></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>)</span>&#123; </span><br><span class="line">	<span class="keyword">var</span> pathname = url.parse(request.url).pathname;  <span class="comment">//pathname =&gt; select </span></span><br><span class="line">	   </span><br><span class="line">	<span class="keyword">var</span> arg = url.parse(request.url).query;          <span class="comment">//arg =&gt; name=a&amp;id=5 </span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"Request for "</span> + arg ); </span><br><span class="line">	<span class="keyword">var</span> str = querystring.parse(arg);                <span class="comment">//str=&gt; &#123;name:'a',id:'5'&#125; </span></span><br><span class="line">	   </span><br><span class="line">	<span class="keyword">var</span> arg1 = url.parse(request.url, <span class="literal">true</span>).query;   <span class="comment">//arg1 =&gt; &#123;name:'a',id:'5'&#125; </span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"Request for "</span> + arg1 ); </span><br><span class="line">	   </span><br><span class="line">	<span class="keyword">var</span> name = querystring.parse(arg).name;         <span class="comment">//name =&gt; a </span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"name = "</span>+name); </span><br><span class="line"></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"Request for "</span> + pathname + <span class="string">" received."</span>); </span><br><span class="line">&#125;).listen(<span class="number">8888</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/07/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Hello World test
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 厘澄 - 京ICP备16003388号
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+    
+
+<script>
+	var yiliaConfig = {
+		fancybox: false,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
