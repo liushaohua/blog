@@ -158,6 +158,28 @@
   </entry>
   
   <entry>
+    <title><![CDATA[centos7下安装mysql]]></title>
+    <link href="http://www.liushaohua.cn/2015/04/12/centos7%E4%B8%8B%E5%AE%89%E8%A3%85mysql/"/>
+    <id>http://www.liushaohua.cn/2015/04/12/centos7下安装mysql/</id>
+    <published>2015-04-12T03:13:45.000Z</published>
+    <updated>2016-02-04T05:09:38.197Z</updated>
+    <content type="html"><![CDATA[<p>我在我笔记本中安装了<code>mysql</code>，而我的远程服务上还没安装，身为一个小白，要多折腾一下。<br><a id="more"></a><br>由于我服务器的系统是<code>CentOS7</code>，而CentOS7的yum源中貌似没有正常安装mysql时的<code>mysql-sever</code>文件，需要去官网上下载。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://dev.mysql.com/get/mysql-community-release-el7-<span class="number">5</span>.noarch.rpm</span><br><span class="line">rpm -ivh mysql-community-release-el7-<span class="number">5</span>.noarch.rpm</span><br><span class="line">yum install mysql-community-server</span><br></pre></td></tr></table></figure>
+<h2 id="u8BA9MySQL_u670D_u52A1_u5668_u88AB_u8FDC_u7A0B_u8BBF_u95EE"><a href="#u8BA9MySQL_u670D_u52A1_u5668_u88AB_u8FDC_u7A0B_u8BBF_u95EE" class="headerlink" title="让MySQL服务器被远程访问"></a>让MySQL服务器被远程访问</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//在本机登入mysql后，更改<span class="string">"mysql"</span>数据库里的<span class="string">"user"</span>表里的<span class="string">"host"</span>项，从<span class="string">"localhost"</span>改为<span class="string">"%"</span>。</span><br><span class="line">mysql&gt;</span><br><span class="line">mysql&gt;use mysql;</span><br><span class="line">mysql&gt;select <span class="string">'host'</span> from user <span class="built_in">where</span> user=<span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line">//查看mysql库中的user表的host值（即可进行连接访问的主机/IP名称）</span><br><span class="line">mysql&gt;update user <span class="built_in">set</span> host = <span class="string">'%'</span> <span class="built_in">where</span> user =<span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line">//如果报错：ERROR <span class="number">1062</span> (<span class="number">23000</span>): Duplicate entry <span class="string">'%-root'</span> <span class="keyword">for</span> key <span class="string">'PRIMARY'</span></span><br><span class="line"></span><br><span class="line">select host from user <span class="built_in">where</span> user = <span class="string">'root'</span>;</span><br><span class="line">//查看一下host是否已经有了%这个值</span><br><span class="line"></span><br><span class="line">+--------------+------+</span><br><span class="line">| host         | user |</span><br><span class="line">+--------------+------+</span><br><span class="line">| %            | root |</span><br><span class="line">| <span class="number">127.0</span>.<span class="number">0.1</span>    | root |</span><br><span class="line">| ::<span class="number">1</span>          | root |</span><br><span class="line">| iz25zf7cpbkz | root |</span><br><span class="line">+--------------+------+</span><br><span class="line"></span><br><span class="line">//如果有了直接执行下面的flush privileges;即可</span><br><span class="line">mysql&gt;flush privileges;</span><br><span class="line">mysql&gt;select host,user from user <span class="built_in">where</span> user=<span class="string">'root'</span>;</span><br><span class="line">mysql&gt;quit</span><br></pre></td></tr></table></figure>
+<p>然后就可以愉快的去玩耍了</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>我在我笔记本中安装了<code>mysql</code>，而我的远程服务上还没安装，身为一个小白，要多折腾一下。<br>]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://www.liushaohua.cn/tags/Linux/"/>
+    
+      <category term="mysql" scheme="http://www.liushaohua.cn/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[express4.x体验]]></title>
     <link href="http://www.liushaohua.cn/2015/04/02/express4-x%E4%BD%93%E9%AA%8C/"/>
     <id>http://www.liushaohua.cn/2015/04/02/express4-x体验/</id>
