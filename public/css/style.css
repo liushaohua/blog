@@ -2304,3 +2304,7 @@ pre .css ~ * .id {
   height: 100%;
   overflow: hidden;
 }
+/*自己喜好修改*/
+#container .left-col .overlay {
+  background-color: rgba(87,5,93,0.81);
+}
