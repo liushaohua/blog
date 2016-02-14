@@ -48,7 +48,7 @@ SSL有几款是免费的，生成证书后`listen 443`即可;
 ```
 ### 重启
 ```nginx
-	nginx -s reload
+	/usr/sbin/nginx -s reload
 	netstat -apnt | grep 443
 ```
 如果显示为下面这样
