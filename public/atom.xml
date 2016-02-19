@@ -87,6 +87,35 @@
   </entry>
   
   <entry>
+    <title><![CDATA[使用ThinkJS构建web应用]]></title>
+    <link href="http://www.liushaohua.cn/2015/12/01/thinkjs/"/>
+    <id>http://www.liushaohua.cn/2015/12/01/thinkjs/</id>
+    <published>2015-12-01T09:09:58.000Z</published>
+    <updated>2016-02-19T01:38:11.844Z</updated>
+    <content type="html"><![CDATA[<p>玩过<code>Node</code>的同学对<code>Express</code>肯定不陌生，是TJ大神主刀开发的，今天咱们来说<code>下ThinkJS</code>，提到<code>ThinkPHP</code>各位同学肯定秒懂了，感谢<code>奇舞团</code>&amp;&amp;<code>成银老师</code>。</p>
+<a id="more"></a>
+<p>ThinkJS基于<code>MVC</code>设计，把数据视图表现分离得当，把常用的Node方法进行了封装，入门简单，大大的提高了开发效率，让我们可以随随便便分分钟构建一个web应用，废话不多说，直接来。</p>
+<h3 id="u5B89_u88C5ThinkJS"><a href="#u5B89_u88C5ThinkJS" class="headerlink" title="安装ThinkJS"></a>安装ThinkJS</h3><ul>
+<li>npm install thinkjs@2 -g –verbos</li>
+</ul>
+<h3 id="u521B_u5EFA_u9879_u76EE_26amp_3B_26amp_3B_u542F_u52A8"><a href="#u521B_u5EFA_u9879_u76EE_26amp_3B_26amp_3B_u542F_u52A8" class="headerlink" title="创建项目&amp;&amp;启动"></a>创建项目&amp;&amp;启动</h3><ul>
+<li>thinkjs new project_path –es6</li>
+<li>cd project_path &amp;&amp; npm install</li>
+<li>npm start</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>玩过<code>Node</code>的同学对<code>Express</code>肯定不陌生，是TJ大神主刀开发的，今天咱们来说<code>下ThinkJS</code>，提到<code>ThinkPHP</code>各位同学肯定秒懂了，感谢<code>奇舞团</code>&amp;&amp;<code>成银老师</code>。</p>]]>
+    
+    </summary>
+    
+      <category term="ThinkJS" scheme="http://www.liushaohua.cn/tags/ThinkJS/"/>
+    
+      <category term="node.js" scheme="http://www.liushaohua.cn/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[为你的网站升级HTTP/2]]></title>
     <link href="http://www.liushaohua.cn/2015/08/21/%E4%B8%BA%E4%BD%A0%E7%9A%84%E7%BD%91%E7%AB%99%E5%8D%87%E7%BA%A7http-2/"/>
     <id>http://www.liushaohua.cn/2015/08/21/为你的网站升级http-2/</id>

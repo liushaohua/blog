@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: 个人随笔 | 厘澄的小站</title>
+  <title>使用ThinkJS构建web应用 | 厘澄的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="厘澄，专注web前端开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="厘澄的小站">
-<meta property="og:url" content="http://www.liushaohua.cn/tags/个人随笔/index.html">
+  <meta name="description" content="玩过Node的同学对Express肯定不陌生，是TJ大神主刀开发的，今天咱们来说下ThinkJS，提到ThinkPHP各位同学肯定秒懂了，感谢奇舞团&amp;amp;&amp;amp;成银老师。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用ThinkJS构建web应用">
+<meta property="og:url" content="http://www.liushaohua.cn/2015/12/01/thinkjs/index.html">
 <meta property="og:site_name" content="厘澄的小站">
-<meta property="og:description" content="厘澄，专注web前端开发">
+<meta property="og:description" content="玩过Node的同学对Express肯定不陌生，是TJ大神主刀开发的，今天咱们来说下ThinkJS，提到ThinkPHP各位同学肯定秒懂了，感谢奇舞团&amp;amp;&amp;amp;成银老师。">
+<meta property="og:updated_time" content="2016-02-19T01:38:11.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="厘澄的小站">
-<meta name="twitter:description" content="厘澄，专注web前端开发">
+<meta name="twitter:title" content="使用ThinkJS构建web应用">
+<meta name="twitter:description" content="玩过Node的同学对Express肯定不陌生，是TJ大神主刀开发的，今天咱们来说下ThinkJS，提到ThinkPHP各位同学肯定秒懂了，感谢奇舞团&amp;amp;&amp;amp;成银老师。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -188,53 +189,107 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-thinkjs" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/07/12/new一个hexo/" class="archive-article-date">
-	<time datetime="2015-07-12T01:28:43.000Z" itemprop="datePublished">7月 12</time>
+    <div class="article-meta">
+      <a href="/2015/12/01/thinkjs/" class="article-date">
+	<time datetime="2015-12-01T09:09:58.000Z" itemprop="datePublished">2015-12-01</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/07/12/new一个hexo/">new一个hexo</a>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用ThinkJS构建web应用&nbsp;&nbsp;<span id="busuanzi_container_page_pv">阅读量：<span id="busuanzi_value_page_pv"></span></span>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人随笔/">个人随笔</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ThinkJS/">ThinkJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>玩过<code>Node</code>的同学对<code>Express</code>肯定不陌生，是TJ大神主刀开发的，今天咱们来说<code>下ThinkJS</code>，提到<code>ThinkPHP</code>各位同学肯定秒懂了，感谢<code>奇舞团</code>&amp;&amp;<code>成银老师</code>。</p>
+<a id="more"></a>
+<p>ThinkJS基于<code>MVC</code>设计，把数据视图表现分离得当，把常用的Node方法进行了封装，入门简单，大大的提高了开发效率，让我们可以随随便便分分钟构建一个web应用，废话不多说，直接来。</p>
+<h3 id="u5B89_u88C5ThinkJS"><a href="#u5B89_u88C5ThinkJS" class="headerlink" title="安装ThinkJS"></a>安装ThinkJS</h3><ul>
+<li>npm install thinkjs@2 -g –verbos</li>
+</ul>
+<h3 id="u521B_u5EFA_u9879_u76EE_26amp_3B_26amp_3B_u542F_u52A8"><a href="#u521B_u5EFA_u9879_u76EE_26amp_3B_26amp_3B_u542F_u52A8" class="headerlink" title="创建项目&amp;&amp;启动"></a>创建项目&amp;&amp;启动</h3><ul>
+<li>thinkjs new project_path –es6</li>
+<li>cd project_path &amp;&amp; npm install</li>
+<li>npm start</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/26/ECMAScript学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          ECMAScript学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/21/为你的网站升级http-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">为你的网站升级HTTP/2</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="thinkjs" data-title="使用ThinkJS构建web应用" data-url="http://www.liushaohua.cn/2015/12/01/thinkjs/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"shaohua5945"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//liushaohua.cn/js/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -259,9 +314,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
