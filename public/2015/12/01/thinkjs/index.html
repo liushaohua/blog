@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://www.liushaohua.cn/2015/12/01/thinkjs/index.html">
 <meta property="og:site_name" content="厘澄的小站">
 <meta property="og:description" content="玩过Node的同学对Express肯定不陌生，是TJ大神主刀开发的，今天咱们来说下ThinkJS，提到ThinkPHP各位同学肯定秒懂了，感谢奇舞团&amp;amp;&amp;amp;成银老师。">
-<meta property="og:updated_time" content="2016-02-19T01:38:11.844Z">
+<meta property="og:updated_time" content="2016-02-19T07:57:20.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用ThinkJS构建web应用">
 <meta name="twitter:description" content="玩过Node的同学对Express肯定不陌生，是TJ大神主刀开发的，今天咱们来说下ThinkJS，提到ThinkPHP各位同学肯定秒懂了，感谢奇舞团&amp;amp;&amp;amp;成银老师。">
@@ -72,13 +72,13 @@
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Тэги</li>
+						<li>菜单</li>
+						<li>标签</li>
 						
-						<li>Links</li>
+						<li>友情链接</li>
 						
 						
-						<li>О сайте</li>
+						<li>关于我</li>
 						
 					</ul>
 				</div>
@@ -235,6 +235,19 @@
 <li>cd project_path &amp;&amp; npm install</li>
 <li>npm start</li>
 </ul>
+<h3 id="u76EE_u5F55_u7ED3_u6784"><a href="#u76EE_u5F55_u7ED3_u6784" class="headerlink" title="目录结构"></a>目录结构</h3><ul>
+<li>src 查看当前所有模块<ul>
+<li>bootstrap</li>
+<li>config</li>
+<li>controller</li>
+</ul>
+</li>
+<li>view 视图文件</li>
+</ul>
+<p>common -&gt; config -&gt; config.js</p>
+<p>export default {<br>  route_on: true<br>};    </p>
+<p>开启默认路由，在config目录下创建 router.js<br>//自定义路由规则<br>module.exports = [<br>    [“page/:id”, “index/page”],                    //详情页<br>    [“p/:page”, “index/index”],                    //首页翻页<br>    [“mood/:page”, “mood/index”],                //心情<br>    [“search”, “index/search”],                    //搜索<br>    [“login”, “index/login”],                    //登录<br>    [“cate/:cate”, “index/index”],<br>    [“tag/:tag”, “index/index”],                //标签云<br>    [“about”, “index/page?id=1”],                //关于<br>    [“comment”, “index/page?id=2”],                //留言<br>    [“archives”,”index/archives”],                //归档<br>    [“error”,”index/error”]                        //错误<br>]</p>
+<p>//db 文件修改，连接数据库</p>
 
       
     </div>

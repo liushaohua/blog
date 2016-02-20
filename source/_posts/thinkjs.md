@@ -16,3 +16,34 @@ ThinkJS基于`MVC`设计，把数据视图表现分离得当，把常用的Node�
 - thinkjs new project_path --es6
 - cd project_path && npm install
 - npm start
+
+### 目录结构
+- src 查看当前所有模块
+	- bootstrap
+	- config
+	- controller
+- view 视图文件
+
+common -> config -> config.js
+
+export default {
+  route_on: true
+};	
+
+开启默认路由，在config目录下创建 router.js
+//自定义路由规则
+module.exports = [
+    ["page/:id", "index/page"],					//详情页
+	["p/:page", "index/index"],					//首页翻页
+	["mood/:page", "mood/index"],				//心情
+	["search", "index/search"],					//搜索
+	["login", "index/login"],					//登录
+	["cate/:cate", "index/index"],
+	["tag/:tag", "index/index"],				//标签云
+	["about", "index/page?id=1"],				//关于
+	["comment", "index/page?id=2"],				//留言
+	["archives","index/archives"],				//归档
+	["error","index/error"]						//错误
+]
+
+//db 文件修改，连接数据库
