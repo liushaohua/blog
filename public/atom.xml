@@ -162,11 +162,11 @@
     <link href="http://www.liushaohua.cn/2015/07/12/new%E4%B8%80%E4%B8%AAhexo/"/>
     <id>http://www.liushaohua.cn/2015/07/12/new一个hexo/</id>
     <published>2015-07-12T01:28:43.000Z</published>
-    <updated>2016-01-31T01:21:57.243Z</updated>
-    <content type="html"><![CDATA[<p>&emsp;&emsp;时隔多年，我终于又开始用个人网站了，记得当年第一次用的时候是2011年，为了找工作购买了域名<a href="http://www.hinlary" target="_blank" rel="external">www.hinlary.com</a>，还购买了廉价服务器,一个月也就10几20几块吧，当时只是放了静态页面上去，后续找到工作后就没有在用过，空间到期了懒得续了，域名到是续过2次就再没续过，随后也是过期了，后来又过了不知多久，闲来无事就注册了现在这个域名，买了个相对便宜的香港主机150一年，就在上面搭了WordPress写过几篇博文过了1年主机到期了又不了了之了，总之就是坚持不下来~14年左右吧看大家用github，我也跟风搞了一发，搭建了个github-page,随意放了点静态页面，也是懒的原因，浑浑噩噩的度过了15年，先后换了几台电脑，由DELL换成了mac，又换回了公司配的DELL，加上自己存放东西毫无规律，这么些年写的代码都找不到了，也是醉的不行了~桑不起的前端狗撒~~~  !</p>
+    <updated>2016-02-22T02:09:20.646Z</updated>
+    <content type="html"><![CDATA[<p>&emsp;&emsp;时隔多年，我终于又开始用个人网站了，记得当年第一次用的时候是2011年，为了找工作购买了域名<a href="http://www.hinlary.com" target="_blank" rel="external">www.hinlary.com</a>，还购买了廉价服务器,一个月也就10几20几块吧，当时只是放了静态页面上去，后续找到工作后就没有在用过，空间到期了懒得续了，域名到是续过2次就再没续过，随后也是过期了，后来又过了不知多久，闲来无事就注册了现在这个域名，买了个相对便宜的香港主机150一年，就在上面搭了WordPress写过几篇博文过了1年主机到期了又不了了之了，总之就是坚持不下来~14年左右吧看大家用github，我也跟风搞了一发，搭建了个github-page,随意放了点静态页面，也是懒的原因，浑浑噩噩的度过了15年，先后换了几台电脑，由DELL换成了mac，又换回了公司配的DELL，加上自己存放东西毫无规律，这么些年写的代码都找不到了，也是醉的不行了~桑不起的前端狗撒~~~  !</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>&emsp;&emsp;时隔多年，我终于又开始用个人网站了，记得当年第一次用的时候是2011年，为了找工作购买了域名<a href="http://www.hinlary" target="_blank" rel="external">www.hinlary.com</a>]]>
+    <![CDATA[<p>&emsp;&emsp;时隔多年，我终于又开始用个人网站了，记得当年第一次用的时候是2011年，为了找工作购买了域名<a href="http://www.hinlary.com" target="_blank" rel="external">www.hinlary.com]]>
     </summary>
     
       <category term="hexo" scheme="http://www.liushaohua.cn/tags/hexo/"/>
@@ -275,6 +275,109 @@
     </summary>
     
       <category term="express" scheme="http://www.liushaohua.cn/tags/express/"/>
+    
+      <category term="node.js" scheme="http://www.liushaohua.cn/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Node学习笔记-Stream]]></title>
+    <link href="http://www.liushaohua.cn/2014/04/11/node-stream/"/>
+    <id>http://www.liushaohua.cn/2014/04/11/node-stream/</id>
+    <published>2014-04-11T01:55:25.000Z</published>
+    <updated>2016-02-22T07:24:23.294Z</updated>
+    <content type="html"><![CDATA[<p>在Node的使用中，我们会频繁的接触到<code>Stream</code>,并且内建stream模块已经被多个Node核心模块使用，同时也可以被用户自定义的模块使用。<code>Stream</code>到底是什么，用来做什么，最近查阅了写资料并进行了整理，简单总结下供自己查阅。</p>
+<a id="more"></a>
+<h3 id="u7B80_u4ECB"><a href="#u7B80_u4ECB" class="headerlink" title="简介"></a>简介</h3><p><a href="http://nodeapi.ucdok.com/#/api/stream.html" target="_blank" rel="external">官方文档</a>上是这么说的：<code>流是一个抽象接口，被 Node 中的很多对象所实现。比如对一个 HTTP 服务器的请求是一个流，stdout 也是一个流。流是可读、可写或兼具两者的。所有流都是 EventEmitter 的实例。</code> 流又包括四类流， <code>Readable</code> 流、<code>Writable</code> 流、<code>Duplex</code> 流和<code>Transform</code>流，具体的异同会在下文中说到.</p>
+<h3 id="u6D41_u7684_u7528_u9014"><a href="#u6D41_u7684_u7528_u9014" class="headerlink" title="流的用途"></a>流的用途</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>),</span><br><span class="line">    fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> server = http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    fs.readFile(__dirname + <span class="string">'/data.txt'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">        res.end(data);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">8000</span>);</span><br></pre></td></tr></table></figure>
+<p>上面代码没什么问题,每次请求我们都会把整个data.txt文件读入到内存中，然后把结果返回客户端，但是通常大文件的一次读取和大量用户的高并发都会占用很大的内存，而<code>流</code>则可以分段读取，方便粗暴，大大的方便了我们。</p>
+<h3 id="u5982_u4F55_u4F7F_u7528"><a href="#u5982_u4F55_u4F7F_u7528" class="headerlink" title="如何使用"></a>如何使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 流的分类</span><br><span class="line"> * 可读流 可以从中流出字节内容</span><br><span class="line"> * 可写流 可以把字节写入流中</span><br><span class="line"> * 继承 Readable</span><br><span class="line"> * 继承 EventEmitter</span><br><span class="line"> * @type &#123;exports|module.exports&#125;</span><br><span class="line"> **/</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">//Readable</span></span><br><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>),</span><br><span class="line">    rs = fs.createReadStream(<span class="string">'data.txt'</span>);</span><br><span class="line">	</span><br><span class="line">rs.on(<span class="string">'open'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'打开文件'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//只有当监听了data事件之后才开始真正读取，不监听的话下面的其他方法`end`,'close','error'自然也不会触发</span></span><br><span class="line">rs.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//console.log('操作');</span></span><br><span class="line">    rs.pause();<span class="comment">//等待操作完成          暂停流的发射事件 关掉开关</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'操作完成'</span>);</span><br><span class="line">        rs.resume();<span class="comment">//再次执行操作     重新开始恢复 读取 打开开关</span></span><br><span class="line">    &#125;,<span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line">rs.on(<span class="string">'end'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件内容读取完毕'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">rs.on(<span class="string">'close'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件关闭'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">rs.on(<span class="string">'error'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="u5927_u5BB6_u53EF_u4EE5_u770B_u51FA_u6765_uFF0CReadable_u6D41_u6709_u4EE5_u4E0B_u51E0_u4E2A_u4E8B_u4EF6_uFF1A"><a href="#u5927_u5BB6_u53EF_u4EE5_u770B_u51FA_u6765_uFF0CReadable_u6D41_u6709_u4EE5_u4E0B_u51E0_u4E2A_u4E8B_u4EF6_uFF1A" class="headerlink" title="大家可以看出来，Readable流有以下几个事件："></a>大家可以看出来，<code>Readable</code>流有以下几个事件：</h3><ul>
+<li>当一个数据块可以从流中被读出时，它会触发一个 <code>readable</code> 事件</li>
+<li><code>data</code>事件 - 数据正在传递时，触发该事件（以chunk数据块为对象）</li>
+<li><code>end</code>事件 - 数据传递完成后，会触发该事件。</li>
+<li><code>close</code>事件 - 当底层数据源（比如，源头的文件描述符）被关闭时触发。并不是所有流都会触发这个事件。</li>
+<li><code>error</code>事件 - 数据接收异常时，会触发该事件</li>
+</ul>
+<h3 id="u65B9_u4FBF_u7684API"><a href="#u65B9_u4FBF_u7684API" class="headerlink" title="方便的API"></a>方便的API</h3><p>Node还给我提供了简洁的API，供我们使用，而且<code>req</code>,<code>res</code>参数都是流对象,读文件的代码我们就可以调整下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> stream = fs.createReadStream(__dirname + <span class="string">'/data.txt'</span>);</span><br><span class="line">    stream.pipe(res);</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">8000</span>);</span><br></pre></td></tr></table></figure></p>
+<p><code>.pipe</code>方法会自动帮助我们监听data和end事件。上面的这段代码不仅简洁，而且<code>data.txt</code>文件中每一小段数据都将源源不断的发送到客户端。<br>除此之外，使用<code>.pipe()</code>方法还有别的好处，比如说它可以自动控制后端压力，以便在客户端连接缓慢的时候node可以将尽可能少的缓存放到内存中。</p>
+<h3 id="pipe"><a href="#pipe" class="headerlink" title="pipe"></a>pipe</h3><p>readable.pipe(destination, [options])</p>
+<ul>
+<li>实现流的输入和输出功能</li>
+<li>destination {Writable Stream} 写入数据的目标</li>
+<li>options {Object} 导流选项</li>
+<li>end {Boolean} 在读取者结束时结束写入者。缺省为 true</li>
+</ul>
+<h3 id="Stream_u4E2D_u76844_u5927_u5929_u738B"><a href="#Stream_u4E2D_u76844_u5927_u5929_u738B" class="headerlink" title="Stream中的4大天王"></a>Stream中的4大<code>天王</code></h3><table>
+<thead>
+<tr>
+<th>类</th>
+<th style="text-align:center">使用场景</th>
+<th style="text-align:right">实现的方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Readable</td>
+<td style="text-align:center">只读</td>
+<td style="text-align:right">_read</td>
+</tr>
+<tr>
+<td>Writable</td>
+<td style="text-align:center">只写</td>
+<td style="text-align:right">_write</td>
+</tr>
+<tr>
+<td>Duplex</td>
+<td style="text-align:center">读写</td>
+<td style="text-align:right">_read,_write</td>
+</tr>
+<tr>
+<td>Transform</td>
+<td style="text-align:center">操作被写入的数据，然后读出结果</td>
+<td style="text-align:right">_transform,flush</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Readable流（可读流）介绍</p>
+<ul>
+<li>Readable（可读）流接口是对您正在读取的数据的来源的抽象。换言之，数据出自一个可读流。</li>
+<li>Readable 流有两种“模式”：流动模式和暂停模式。</li>
+<li>当处于流动模式时，数据由底层系统读出，并尽可能快地提供给您的程序；当处于暂停模式时，您必须明确地调用 stream.read() 来取出若干数据块。流默认处于暂停模式。</li>
+<li>Readable流拥有的事件，已经在<code>本文的开始</code>介绍过了。</li>
+</ul>
+</li>
+<li><p>Writable流（可写流）介绍    </p>
+<ul>
+<li>Writable（可写）流接口是对写入数据的目标的抽象。</li>
+<li><code>write()</code>方法 该方法向底层系统写入数据，并在数据被处理完毕后调用所给的回调。</li>
+<li><code>end()</code>方法 当不再写入数据时，调用该方法，停止写入。</li>
+</ul>
+</li>
+<li><p>Duplex(双工流) 介绍</p>
+<ul>
+<li>Duplex（可读写）流同时兼具可读和可写特性，比如一个 TCP 嵌套字连接。</li>
+<li>值得注意的是，stream.Duplex 是一个可以像 Readable 或 Writable 一样被扩充、实现了底层方法 _read(sise) 和 _write(chunk, encoding, callback) 的抽象类</li>
+</ul>
+</li>
+<li><p>Transform（转换流）介绍</p>
+<ul>
+<li>“转换”（transform）流实际上是一个输出与输入存在因果关系的双工流，比如 zlib 流或 crypto 流。</li>
+<li>输入和输出并无要求相同大小、相同块数或同时到达。举个例子，一个 Hash 流只会在输入结束时产生一个数据块的输出；一个 zlib 流会产生比输入小得多或大得多的输出。</li>
+</ul>
+</li>
+</ul>
+<h3 id="u53C2_u8003_u8D44_u6599"><a href="#u53C2_u8003_u8D44_u6599" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="http://nodeapi.ucdok.com/api/" target="_blank" rel="external">NodeAPI</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在Node的使用中，我们会频繁的接触到<code>Stream</code>,并且内建stream模块已经被多个Node核心模块使用，同时也可以被用户自定义的模块使用。<code>Stream</code>到底是什么，用来做什么，最近查阅了写资料并进行了整理，简单总结下供自己查阅。</p>]]>
+    
+    </summary>
+    
+      <category term="Stream" scheme="http://www.liushaohua.cn/tags/Stream/"/>
     
       <category term="node.js" scheme="http://www.liushaohua.cn/tags/node-js/"/>
     

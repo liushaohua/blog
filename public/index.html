@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ECMAScript/" style="font-size: 10px;">ECMAScript</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/ThinkJS/" style="font-size: 10px;">ThinkJS</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/个人随笔/" style="font-size: 10px;">个人随笔</a> <a href="/tags/年终总结/" style="font-size: 10px;">年终总结</a>
+						<a href="/tags/ECMAScript/" style="font-size: 10px;">ECMAScript</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/ThinkJS/" style="font-size: 10px;">ThinkJS</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/个人随笔/" style="font-size: 10px;">个人随笔</a> <a href="/tags/年终总结/" style="font-size: 10px;">年终总结</a>
 					</div>
 				</section>
 				
@@ -446,7 +446,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&emsp;&emsp;时隔多年，我终于又开始用个人网站了，记得当年第一次用的时候是2011年，为了找工作购买了域名<a href="http://www.hinlary" target="_blank" rel="external">www.hinlary.com</a>，还购买了廉价服务器,一个月也就10几20几块吧，当时只是放了静态页面上去，后续找到工作后就没有在用过，空间到期了懒得续了，域名到是续过2次就再没续过，随后也是过期了，后来又过了不知多久，闲来无事就注册了现在这个域名，买了个相对便宜的香港主机150一年，就在上面搭了WordPress写过几篇博文过了1年主机到期了又不了了之了，总之就是坚持不下来~14年左右吧看大家用github，我也跟风搞了一发，搭建了个github-page,随意放了点静态页面，也是懒的原因，浑浑噩噩的度过了15年，先后换了几台电脑，由DELL换成了mac，又换回了公司配的DELL，加上自己存放东西毫无规律，这么些年写的代码都找不到了，也是醉的不行了~桑不起的前端狗撒~~~  !</p>
+        <p>&emsp;&emsp;时隔多年，我终于又开始用个人网站了，记得当年第一次用的时候是2011年，为了找工作购买了域名<a href="http://www.hinlary.com" target="_blank" rel="external">www.hinlary.com</a>，还购买了廉价服务器,一个月也就10几20几块吧，当时只是放了静态页面上去，后续找到工作后就没有在用过，空间到期了懒得续了，域名到是续过2次就再没续过，随后也是过期了，后来又过了不知多久，闲来无事就注册了现在这个域名，买了个相对便宜的香港主机150一年，就在上面搭了WordPress写过几篇博文过了1年主机到期了又不了了之了，总之就是坚持不下来~14年左右吧看大家用github，我也跟风搞了一发，搭建了个github-page,随意放了点静态页面，也是懒的原因，浑浑噩噩的度过了15年，先后换了几台电脑，由DELL换成了mac，又换回了公司配的DELL，加上自己存放东西毫无规律，这么些年写的代码都找不到了，也是醉的不行了~桑不起的前端狗撒~~~  !</p>
 
       
     </div>
@@ -629,6 +629,64 @@
       
         <p class="article-more-link">
           <a  href="/2015/04/02/express4-x体验/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-node-stream" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/04/11/node-stream/" class="article-date">
+	<time datetime="2014-04-11T01:55:25.000Z" itemprop="datePublished">2014-04-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/04/11/node-stream/">Node学习笔记-Stream</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Node的使用中，我们会频繁的接触到<code>Stream</code>,并且内建stream模块已经被多个Node核心模块使用，同时也可以被用户自定义的模块使用。<code>Stream</code>到底是什么，用来做什么，最近查阅了写资料并进行了整理，简单总结下供自己查阅。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stream/">Stream</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2014/04/11/node-stream/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
