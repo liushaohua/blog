@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[厘澄的小站]]></title>
-  <subtitle><![CDATA[厘澄的小站]]></subtitle>
+  <title><![CDATA[厘澄的小站-专注前端开发]]></title>
+  <subtitle><![CDATA[厘澄的小站-专注前端开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.liushaohua.cn/"/>
   <updated>2016-01-31T04:46:23.931Z</updated>
