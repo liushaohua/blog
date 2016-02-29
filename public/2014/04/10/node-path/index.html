@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://www.liushaohua.cn/2014/04/10/node-path/index.html">
 <meta property="og:site_name" content="厘澄的小站-专注前端开发">
 <meta property="og:description" content="用过世界上最好的语言的同学一定对pathinfo()这个函数比较熟悉，它是检查文件路径相关的API，说起PHP的内置函数，据说有500多个，也是多的不要不要的了，但是功能强大，极大的增加了我们的开发便利，但我们今天的主题不是PHP，我们来聊下Node的Path。">
-<meta property="og:updated_time" content="2016-02-29T09:57:33.927Z">
+<meta property="og:updated_time" content="2016-02-29T10:07:28.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node学习笔记-Path">
 <meta name="twitter:description" content="用过世界上最好的语言的同学一定对pathinfo()这个函数比较熟悉，它是检查文件路径相关的API，说起PHP的内置函数，据说有500多个，也是多的不要不要的了，但是功能强大，极大的增加了我们的开发便利，但我们今天的主题不是PHP，我们来聊下Node的Path。">
@@ -259,7 +259,7 @@
 <li>另一种思路, 是把它看做一系列 cd 命令<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path.resolve(<span class="string">'/a'</span>,<span class="string">'..'</span>,<span class="string">'b'</span>,<span class="string">'msg'</span>,<span class="string">'a.txt'</span>)</span><br><span class="line">e:\b\msg</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path.resolve(&#39;/a&#39;,&#39;..&#39;,&#39;b&#39;,&#39;msg&#39;,&#39;a.txt&#39;)&#10;cd /a &#10;cd ..&#10;cd b/&#10;cd msg&#10;pwd e:\b\msg</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path.resolve(&#39;/a&#39;,&#39;..&#39;,&#39;b&#39;,&#39;msg&#39;,&#39;a.txt&#39;)&#10;cd /a &#10;cd ..&#10;cd b/&#10;cd msg&#10;pwd /b/msg</span><br></pre></td></tr></table></figure>
 <h3 id="path-isAbsolute_28path_29"><a href="#path-isAbsolute_28path_29" class="headerlink" title="path.isAbsolute(path)"></a>path.isAbsolute(path)</h3><ul>
 <li>判断是否绝对路径<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">path.isAbsolute(<span class="string">'/foo/bar'</span>)  <span class="comment">// true</span></span><br><span class="line">path.isAbsolute(<span class="string">'/opt/..'</span>)   <span class="comment">// true</span></span><br><span class="line">   path.isAbsolute(<span class="string">'web/'</span>);     <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 </li>

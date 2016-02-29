@@ -59,7 +59,7 @@ tags:
 	cd ..
 	cd b/
 	cd msg
-	pwd e:\b\msg
+	pwd /b/msg
 ```
 
 ### path.isAbsolute(path)
