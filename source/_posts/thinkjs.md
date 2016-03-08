@@ -18,7 +18,7 @@ ThinkJS基于`MVC`设计，把数据视图表现分离得当，把常用的Node�
 - npm start
 
 ### 目录结构
-![目录结构](http://img.liushaohua.cn/image/blog/20151201/route.png)
+![目录结构](https://o3o97s3zl.qnssl.com/20151201_route.png)
 
 - src 查看当前所有模块
 	- bootstrap

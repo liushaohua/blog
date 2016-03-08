@@ -7,19 +7,18 @@ tags:
 14年8月，我家迎来了一个新主人[弥撒]，一只活泼的喵星人，现在陪伴了俺们一年半有余了，给我们的生活增加了很多乐趣，晒一晒~~
 <!-- more -->
 
-![弥撒01](http://img.liushaohua.cn/image/blog/20160229/01.jpg)
-![弥撒02](http://img.liushaohua.cn/image/blog/20160229/02.jpg)
-![弥撒03](http://img.liushaohua.cn/image/blog/20160229/03.jpg)
-![弥撒04](http://img.liushaohua.cn/image/blog/20160229/04.jpg)
-![弥撒05](http://img.liushaohua.cn/image/blog/20160229/05.jpg)
-![弥撒06](http://img.liushaohua.cn/image/blog/20160229/06.jpg)
-![弥撒07](http://img.liushaohua.cn/image/blog/20160229/07.jpg)
-![弥撒08](http://img.liushaohua.cn/image/blog/20160229/08.jpg)
-![弥撒09](http://img.liushaohua.cn/image/blog/20160229/09.jpg)
-![弥撒10](http://img.liushaohua.cn/image/blog/20160229/10.jpg)
-![弥撒11](http://img.liushaohua.cn/image/blog/20160229/11.jpg)
-![弥撒12](http://img.liushaohua.cn/image/blog/20160229/12.jpg)
-![弥撒13](http://img.liushaohua.cn/image/blog/20160229/13.jpg)
-![弥撒14](http://img.liushaohua.cn/image/blog/20160229/14.jpg)
+![弥撒01](https://o3o97s3zl.qnssl.com/misa1.jpg)
+![弥撒02](https://o3o97s3zl.qnssl.com/misa2.jpg)
+![弥撒03](https://o3o97s3zl.qnssl.com/misa3.jpg)
+![弥撒04](https://o3o97s3zl.qnssl.com/misa4.jpg)
+![弥撒05](https://o3o97s3zl.qnssl.com/misa5.jpg)
+![弥撒06](https://o3o97s3zl.qnssl.com/misa6.jpg)
+![弥撒07](https://o3o97s3zl.qnssl.com/misa7.jpg)
+![弥撒08](https://o3o97s3zl.qnssl.com/misa8.jpg)
+![弥撒09](https://o3o97s3zl.qnssl.com/misa9.jpg)
+![弥撒10](https://o3o97s3zl.qnssl.com/misa10.jpg)
+![弥撒11](https://o3o97s3zl.qnssl.com/misa11.jpg)
+![弥撒12](https://o3o97s3zl.qnssl.com/misa12.jpg)
+![弥撒13](https://o3o97s3zl.qnssl.com/misa13.jpg)
 
 ### 结语：就是这么霸气！

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[厘澄的小站-专注前端开发]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.liushaohua.cn/"/>
-  <updated>2016-03-02T02:59:14.459Z</updated>
+  <updated>2016-03-08T01:51:14.917Z</updated>
   <id>http://www.liushaohua.cn/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://www.liushaohua.cn/2016/02/29/cat/"/>
     <id>http://www.liushaohua.cn/2016/02/29/cat/</id>
     <published>2016-02-29T05:46:08.000Z</published>
-    <updated>2016-03-02T02:59:14.459Z</updated>
+    <updated>2016-03-08T01:51:14.917Z</updated>
     <content type="html"><![CDATA[<p>14年8月，我家迎来了一个新主人[弥撒]，一只活泼的喵星人，现在陪伴了俺们一年半有余了，给我们的生活增加了很多乐趣，晒一晒~~<br><a id="more"></a></p>
-<p><img src="http://img.liushaohua.cn/image/blog/20160229/01.jpg" alt="弥撒01"><br><img src="http://img.liushaohua.cn/image/blog/20160229/02.jpg" alt="弥撒02"><br><img src="http://img.liushaohua.cn/image/blog/20160229/03.jpg" alt="弥撒03"><br><img src="http://img.liushaohua.cn/image/blog/20160229/04.jpg" alt="弥撒04"><br><img src="http://img.liushaohua.cn/image/blog/20160229/05.jpg" alt="弥撒05"><br><img src="http://img.liushaohua.cn/image/blog/20160229/06.jpg" alt="弥撒06"><br><img src="http://img.liushaohua.cn/image/blog/20160229/07.jpg" alt="弥撒07"><br><img src="http://img.liushaohua.cn/image/blog/20160229/08.jpg" alt="弥撒08"><br><img src="http://img.liushaohua.cn/image/blog/20160229/09.jpg" alt="弥撒09"><br><img src="http://img.liushaohua.cn/image/blog/20160229/10.jpg" alt="弥撒10"><br><img src="http://img.liushaohua.cn/image/blog/20160229/11.jpg" alt="弥撒11"><br><img src="http://img.liushaohua.cn/image/blog/20160229/12.jpg" alt="弥撒12"><br><img src="http://img.liushaohua.cn/image/blog/20160229/13.jpg" alt="弥撒13"><br><img src="http://img.liushaohua.cn/image/blog/20160229/14.jpg" alt="弥撒14"></p>
+<p><img src="https://o3o97s3zl.qnssl.com/misa1.jpg" alt="弥撒01"><br><img src="https://o3o97s3zl.qnssl.com/misa2.jpg" alt="弥撒02"><br><img src="https://o3o97s3zl.qnssl.com/misa3.jpg" alt="弥撒03"><br><img src="https://o3o97s3zl.qnssl.com/misa4.jpg" alt="弥撒04"><br><img src="https://o3o97s3zl.qnssl.com/misa5.jpg" alt="弥撒05"><br><img src="https://o3o97s3zl.qnssl.com/misa6.jpg" alt="弥撒06"><br><img src="https://o3o97s3zl.qnssl.com/misa7.jpg" alt="弥撒07"><br><img src="https://o3o97s3zl.qnssl.com/misa8.jpg" alt="弥撒08"><br><img src="https://o3o97s3zl.qnssl.com/misa9.jpg" alt="弥撒09"><br><img src="https://o3o97s3zl.qnssl.com/misa10.jpg" alt="弥撒10"><br><img src="https://o3o97s3zl.qnssl.com/misa11.jpg" alt="弥撒11"><br><img src="https://o3o97s3zl.qnssl.com/misa12.jpg" alt="弥撒12"><br><img src="https://o3o97s3zl.qnssl.com/misa13.jpg" alt="弥撒13"></p>
 <h3 id="u7ED3_u8BED_uFF1A_u5C31_u662F_u8FD9_u4E48_u9738_u6C14_uFF01"><a href="#u7ED3_u8BED_uFF1A_u5C31_u662F_u8FD9_u4E48_u9738_u6C14_uFF01" class="headerlink" title="结语：就是这么霸气！"></a>结语：就是这么霸气！</h3>]]></content>
     <summary type="html">
     <![CDATA[<p>14年8月，我家迎来了一个新主人[弥撒]，一只活泼的喵星人，现在陪伴了俺们一年半有余了，给我们的生活增加了很多乐趣，晒一晒~~<br>]]>
@@ -111,7 +111,7 @@
     <link href="http://www.liushaohua.cn/2015/12/01/thinkjs/"/>
     <id>http://www.liushaohua.cn/2015/12/01/thinkjs/</id>
     <published>2015-12-01T09:09:58.000Z</published>
-    <updated>2016-02-26T10:04:21.572Z</updated>
+    <updated>2016-03-08T01:54:32.427Z</updated>
     <content type="html"><![CDATA[<p>玩过<code>Node</code>的同学对<code>Express</code>肯定不陌生，是TJ大神主刀开发的，今天咱们来说<code>下ThinkJS</code>，提到<code>ThinkPHP</code>各位同学肯定秒懂了，感谢<code>奇舞团</code>&amp;&amp;<code>成银老师</code>。</p>
 <a id="more"></a>
 <p>ThinkJS基于<code>MVC</code>设计，把数据视图表现分离得当，把常用的Node方法进行了封装，入门简单，大大的提高了开发效率，让我们可以随随便便分分钟构建一个web应用，废话不多说，直接来。</p>
@@ -123,7 +123,7 @@
 <li>cd project_path &amp;&amp; npm install</li>
 <li>npm start</li>
 </ul>
-<h3 id="u76EE_u5F55_u7ED3_u6784"><a href="#u76EE_u5F55_u7ED3_u6784" class="headerlink" title="目录结构"></a>目录结构</h3><p><img src="http://img.liushaohua.cn/image/blog/20151201/route.png" alt="目录结构"></p>
+<h3 id="u76EE_u5F55_u7ED3_u6784"><a href="#u76EE_u5F55_u7ED3_u6784" class="headerlink" title="目录结构"></a>目录结构</h3><p><img src="https://o3o97s3zl.qnssl.com/20151201_route.png" alt="目录结构"></p>
 <ul>
 <li>src 查看当前所有模块<ul>
 <li>bootstrap</li>
