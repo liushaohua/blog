@@ -261,7 +261,7 @@ async sendAction() {
 ```
 
 ### 总结
-至此，大工告成，thinkJS开发起来是又快又爽，撸了个`微博`小练习连20分钟都到不了，当然，以上只是基础，更多好玩的好用的还要持续关注`文档`，最后再次感谢`thinkJS`与`成银`老师。
+至此，大工告成，thinkJS开发起来是又快又爽，撸了个`微博`小练习连20分钟都到不了，当然，以上只是基础，更多好玩的好用的还要持续关注`文档`，最后再次感谢`thinkJS`与`成银`老师，源代码已放到我的[github](https://github.com/liushaohua/Example/tree/master/thinkjs/demo01)，欢迎大家参考。
 
 ### 参考资料
 - [官方文档](https://thinkjs.org)
