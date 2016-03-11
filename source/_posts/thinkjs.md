@@ -146,12 +146,12 @@ ThinkJS基于`MVC`设计，把数据视图表现分离得当，把常用的Node�
 ```javascript
 	export default {
 	  type: 'mysql',
-	  host: '',		//ip
+	  host: '',		//ip地址
 	  port: '3306',
-	  name: '',		//项目名称
+	  name: 'weibo',		//名称
 	  user: 'root',
 	  pwd: '',		//密码
-	  prefix: '',	//前缀名称
+	  prefix: 'weibo_',	//前缀名称
 	  encoding: 'utf8',
 	  nums_per_page: 10,
 	  log_sql: true,
@@ -164,4 +164,104 @@ ThinkJS基于`MVC`设计，把数据视图表现分离得当，把常用的Node�
 	};
 ```
 
-### 未完，持续更新中...
+### 数据库相关操作
+- 创建和db.js中`name`字段一样的数据库
+- 增加相关表，表名称的前缀要和db.js中`prefix`字段相同
+- 设计表
+	- 增加`id`,int自动递增,主键
+	- 增加`user_name`,varchar
+	- 增加`text`,varchar
+	- 增加`user_id`,int 
+	- 增加`date`,varchar
+- sql语句如下：
+ - ```nginx
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : my_site
+Source Server Version : 50628
+Source Host           : 123.**.**.***
+Source Database       : weibo
+
+Target Server Type    : MYSQL
+Target Server Version : 50628
+File Encoding         : 65001
+
+Date: 2015-12-01 
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for weibo_list
+-- ----------------------------
+DROP TABLE IF EXISTS `weibo_list`;
+CREATE TABLE `weibo_list` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(40) NOT NULL,
+  `text` varchar(280) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
+
+```
+
+### 启动项目
+- package.json同级目录下`npm install && npm start`
+- 打开浏览器，访问http://127.0.0.1:8360/
+
+### 展示效果
+![微博](https://o3o97s3zl.qnssl.com/20151201_weibo.png)
+
+### 广播、删除微博
+```javascript
+/*广播消息*/
+$.ajax({
+	 type: 'POST',
+	 url: 'home/index/send' ,
+	 data: {
+		'user_name': $('#userName').val(),
+		'user_id': $('#face .current').index() + 1,
+		'text': $('#conBox').val(),
+		 'date': new_date
+	 } ,
+	 success: function () {
+		...
+	 }
+});	
+
+/*删除消息*/
+$.ajax({
+	 type: 'POST',
+	 url: 'home/index/delete' ,
+	 data: {
+		'id': $(this).parents('li').attr('list_id')
+	 } ,
+	 success: function () {
+		...
+	 }
+});			 
+```
+
+### REST API
+关于REST API,thinkJS 中提供了很便捷的方式，只需要判断请求方式，在控制器中增加对应的方法即可
+```javascript
+/**
+* send action
+* 发送消息
+* @return {Promise} []
+*/
+async sendAction() {
+  if(this.isPost()){
+	  await this.model('list').addList(this.post());
+	  this.success();
+  }
+}
+```
+
+### 总结
+至此，大工告成，thinkJS开发起来是又快又爽，撸了个`微博`小练习连20分钟都到不了，当然，以上只是基础，更多好玩的好用的还要持续关注`文档`，最后再次感谢`thinkJS`与`成银`老师。
+
+### 参考资料
+- [官方文档](https://thinkjs.org)
