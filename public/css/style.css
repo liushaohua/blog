@@ -2328,7 +2328,4 @@ pre .css ~ * .id {
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
 }
-/*图片alt以弥撒开始的设置图片尺寸*/
-[alt^=弥撒] {
-  width: 800px;
-}
+/*图片alt以弥撒开始的设置图片尺寸 [alt^=弥撒] {width: 800px;}*/
