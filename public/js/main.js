@@ -71,15 +71,6 @@ require([], function (){
 	}
 	//是否开启动画
 	if(yiliaConfig.animate === true){
-
-		require(['/js/jquery.lazyload.js'], function(){
-			//avatar
-			$(".js-avatar").attr("src", $(".js-avatar").attr("lazy-src"));
-			$(".js-avatar")[0].onload = function(){
-				$(".js-avatar").addClass("show");
-			}
-		});
-		
 		if(yiliaConfig.isHome === true){
 			//content
 			function showArticle(){
@@ -101,6 +92,16 @@ require([], function (){
 		}
 		
 	}
+	
+	/*
+	*	lazy img
+	*   return 
+	*
+	**/
+	require(['/js/imgLoad.js'], function(){
+		$('#header img').addClass('show');
+		imgLoad(".article-entry img,#header img");
+	});
 	
 	//是否新窗口打开链接
 	if(yiliaConfig.open_in_new == true){
