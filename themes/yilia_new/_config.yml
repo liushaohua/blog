@@ -33,7 +33,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: /img/avatar.png
+avatar: https://o3o97s3zl.qnssl.com/avatar.png
 #是否开启分享
 share_jia: false
 share_addthis: false
