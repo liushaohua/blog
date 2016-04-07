@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: mysql | 厘澄的小站-专注前端开发</title>
+  <title>给你的markdown产出图片增加lazy | 厘澄的小站-专注前端开发</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="厘澄个人博客，现居北京，专业猫咪铲屎官，专注web前端开发、用户体验设计">
-<meta property="og:type" content="website">
-<meta property="og:title" content="厘澄的小站-专注前端开发">
-<meta property="og:url" content="http://www.liushaohua.cn/tags/mysql/index.html">
+  <meta name="description" content="Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给你的markdown产出图片增加lazy">
+<meta property="og:url" content="http://www.liushaohua.cn/2015/04/10/markdown/index.html">
 <meta property="og:site_name" content="厘澄的小站-专注前端开发">
-<meta property="og:description" content="厘澄个人博客，现居北京，专业猫咪铲屎官，专注web前端开发、用户体验设计">
+<meta property="og:description" content="Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。">
+<meta property="og:updated_time" content="2016-04-07T09:32:58.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="厘澄的小站-专注前端开发">
-<meta name="twitter:description" content="厘澄个人博客，现居北京，专业猫咪铲屎官，专注web前端开发、用户体验设计">
+<meta name="twitter:title" content="给你的markdown产出图片增加lazy">
+<meta name="twitter:description" content="Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -190,54 +191,99 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/04/12/centos7下安装mysql/" class="archive-article-date">
-	<time datetime="2015-04-12T03:13:45.000Z" itemprop="datePublished">Apr 12</time>
+    <div class="article-meta">
+      <a href="/2015/04/10/markdown/" class="article-date">
+	<time datetime="2015-04-10T07:32:34.000Z" itemprop="datePublished">2015-04-10</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/12/centos7下安装mysql/">centos7下安装mysql</a>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      给你的markdown产出图片增加lazy
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。<br><a id="more"></a><br>我的博客用的是hexo,试用Markdown语法插入一张图片很方便，只需要<code>![弥撒13](https://o3o97s3zl.qnssl.com/misa13.jpg?imageView2/2/w/800/q/90)</code>就可以了，解析后会给我们创建一个<code>&lt;img src=&quot;https://o3o97s3zl.qnssl.com/misa13.jpg?imageView2/2/w/800/q/90&quot; alt=&quot;弥撒13&quot;</code>,如果我们想增加一个width或者其他的class就不支持了，要么我们就更换其他引擎，要么就修改一下源代码，为了方便起见，我选择了第二个。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">cd node_modules/hexo-renderer-marked/node_modules/marked/lib</span><br><span class="line">vi marked.js 找到<span class="number">890</span>行，修改下img标签这</span><br><span class="line">Renderer.prototype.image = <span class="function"><span class="keyword">function</span>(<span class="params">href, title, text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> out = <span class="string">'&lt;img lazy-src="'</span> + href + <span class="string">'" alt="'</span> + text + <span class="string">'"'</span>;</span><br><span class="line">  <span class="keyword">if</span> (title) &#123;</span><br><span class="line">    out += <span class="string">' title="'</span> + title + <span class="string">'"'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  out += <span class="keyword">this</span>.options.xhtml ? <span class="string">'/&gt;'</span> : <span class="string">'&gt;'</span>;</span><br><span class="line">  <span class="keyword">return</span> out;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Renderer.prototype.text = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> text;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>ok~ 搞定，如果要修改其他的语法的话也在这个JS文件中改一笔就完事了~~~</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/12/centos7下安装mysql/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          centos7下安装mysql
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/02/express4-x体验/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">express4.x体验</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="markdown" data-title="给你的markdown产出图片增加lazy" data-url="http://www.liushaohua.cn/2015/04/10/markdown/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"shaohua5945"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//liushaohua.cn/js/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -262,9 +308,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

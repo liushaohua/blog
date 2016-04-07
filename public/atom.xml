@@ -324,6 +324,24 @@
   </entry>
   
   <entry>
+    <title><![CDATA[给你的markdown产出图片增加lazy]]></title>
+    <link href="http://www.liushaohua.cn/2015/04/10/markdown/"/>
+    <id>http://www.liushaohua.cn/2015/04/10/markdown/</id>
+    <published>2015-04-10T07:32:34.000Z</published>
+    <updated>2016-04-07T09:32:58.334Z</updated>
+    <content type="html"><![CDATA[<p>Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。<br><a id="more"></a><br>我的博客用的是hexo,试用Markdown语法插入一张图片很方便，只需要<code>![弥撒13](https://o3o97s3zl.qnssl.com/misa13.jpg?imageView2/2/w/800/q/90)</code>就可以了，解析后会给我们创建一个<code>&lt;img src=&quot;https://o3o97s3zl.qnssl.com/misa13.jpg?imageView2/2/w/800/q/90&quot; alt=&quot;弥撒13&quot;</code>,如果我们想增加一个width或者其他的class就不支持了，要么我们就更换其他引擎，要么就修改一下源代码，为了方便起见，我选择了第二个。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">cd node_modules/hexo-renderer-marked/node_modules/marked/lib</span><br><span class="line">vi marked.js 找到<span class="number">890</span>行，修改下img标签这</span><br><span class="line">Renderer.prototype.image = <span class="function"><span class="keyword">function</span>(<span class="params">href, title, text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> out = <span class="string">'&lt;img lazy-src="'</span> + href + <span class="string">'" alt="'</span> + text + <span class="string">'"'</span>;</span><br><span class="line">  <span class="keyword">if</span> (title) &#123;</span><br><span class="line">    out += <span class="string">' title="'</span> + title + <span class="string">'"'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  out += <span class="keyword">this</span>.options.xhtml ? <span class="string">'/&gt;'</span> : <span class="string">'&gt;'</span>;</span><br><span class="line">  <span class="keyword">return</span> out;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Renderer.prototype.text = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> text;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>ok~ 搞定，如果要修改其他的语法的话也在这个JS文件中改一笔就完事了~~~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。<br>]]>
+    
+    </summary>
+    
+      <category term="Markdown" scheme="http://www.liushaohua.cn/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[express4.x体验]]></title>
     <link href="http://www.liushaohua.cn/2015/04/02/express4-x%E4%BD%93%E9%AA%8C/"/>
     <id>http://www.liushaohua.cn/2015/04/02/express4-x体验/</id>
