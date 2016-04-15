@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>给你的markdown产出图片增加lazy | 厘澄的小站-专注前端开发</title>
+  <title>web前端开发面试题整理 | 厘澄的小站-专注前端开发</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。">
+  <meta name="description" content="前端开发面试题收集整理，持续更新中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="给你的markdown产出图片增加lazy">
-<meta property="og:url" content="http://www.liushaohua.cn/2015/04/10/markdown/index.html">
+<meta property="og:title" content="web前端开发面试题整理">
+<meta property="og:url" content="http://www.liushaohua.cn/2016/04/15/f2e/index.html">
 <meta property="og:site_name" content="厘澄的小站-专注前端开发">
-<meta property="og:description" content="Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。">
-<meta property="og:updated_time" content="2016-04-07T09:32:58.334Z">
+<meta property="og:description" content="前端开发面试题收集整理，持续更新中">
+<meta property="og:updated_time" content="2016-04-15T07:01:05.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="给你的markdown产出图片增加lazy">
-<meta name="twitter:description" content="Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。">
+<meta name="twitter:title" content="web前端开发面试题整理">
+<meta name="twitter:description" content="前端开发面试题收集整理，持续更新中">
   
   
     <link rel="icon" href="/favicon.png">
@@ -191,11 +191,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-f2e" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/10/markdown/" class="article-date">
-	<time datetime="2015-04-10T07:32:34.000Z" itemprop="datePublished">2015-04-10</time>
+      <a href="/2016/04/15/f2e/" class="article-date">
+	<time datetime="2016-04-15T03:14:32.000Z" itemprop="datePublished">2016-04-15</time>
 </a>
     </div>
   
@@ -206,7 +206,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      给你的markdown产出图片增加lazy
+      web前端开发面试题整理
     </h1>
   
 
@@ -216,7 +216,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试题/">面试题</a></li></ul>
 	</div>
 
         
@@ -227,8 +227,116 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。<br><a id="more"></a><br>我的博客用的是hexo,试用Markdown语法插入一张图片很方便，只需要<code>![弥撒13](https://o3o97s3zl.qnssl.com/misa13.jpg?imageView2/2/w/800/q/90)</code>就可以了，解析后会给我们创建一个<code>&lt;img src=&quot;https://o3o97s3zl.qnssl.com/misa13.jpg?imageView2/2/w/800/q/90&quot; alt=&quot;弥撒13&quot;</code>,如果我们想增加一个width或者其他的class就不支持了，要么我们就更换其他引擎，要么就修改一下源代码，为了方便起见，我选择了第二个。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">cd node_modules/hexo-renderer-marked/node_modules/marked/lib</span><br><span class="line">vi marked.js 找到<span class="number">890</span>行，修改下img标签这</span><br><span class="line">Renderer.prototype.image = <span class="function"><span class="keyword">function</span>(<span class="params">href, title, text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> out = <span class="string">'&lt;img lazy-src="'</span> + href + <span class="string">'" alt="'</span> + text + <span class="string">'"'</span>;</span><br><span class="line">  <span class="keyword">if</span> (title) &#123;</span><br><span class="line">    out += <span class="string">' title="'</span> + title + <span class="string">'"'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  out += <span class="keyword">this</span>.options.xhtml ? <span class="string">'/&gt;'</span> : <span class="string">'&gt;'</span>;</span><br><span class="line">  <span class="keyword">return</span> out;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Renderer.prototype.text = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> text;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>ok~ 搞定，如果要修改其他的语法的话也在这个JS文件中改一笔就完事了~~~</p>
+        <p>前端开发面试题收集整理，持续更新中</p>
+<a id="more"></a>
+<h3 id="CSS_u76F8_u5173"><a href="#CSS_u76F8_u5173" class="headerlink" title="CSS相关"></a>CSS相关</h3><ul>
+<li>display:none和visibility:hidden的区别</li>
+<li>CSS中 link 和@import 的区别</li>
+<li>position的absolute与fixed共同点与不同点</li>
+<li>介绍一下CSS的盒子模型</li>
+<li>CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？</li>
+<li>列出display的值，说明他们的作用。position的值， relative和absolute分别是相对于谁进行定位的？</li>
+<li>CSS3有哪些新特性？</li>
+<li>为什么要初始化CSS样式</li>
+<li>对BFC规范的理解？</li>
+<li>解释下 CSS sprites，以及你要如何在页面或网站中使用它？</li>
+</ul>
+<h3 id="HTML_u76F8_u5173"><a href="#HTML_u76F8_u5173" class="headerlink" title="HTML相关"></a>HTML相关</h3><ul>
+<li>说说你对语义化的理解？</li>
+<li>Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?</li>
+<li>你知道多少种Doctype文档类型？</li>
+<li>HTML与XHTML——二者有什么区别？</li>
+<li>解释下浮动和它的工作原理？清除浮动的技巧？</li>
+<li>浮动元素引起的问题和解决办法？</li>
+<li>IE 8以下版本的浏览器中的盒模型有什么不同</li>
+<li>html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</li>
+<li>iframe的优缺点？</li>
+<li>如何实现浏览器内多个标签页之间的通信?</li>
+<li>webSocket如何兼容低浏览器？</li>
+<li>嵌入JS应该放在什么位置？</li>
+</ul>
+<h3 id="JavaScript_u76F8_u5173"><a href="#JavaScript_u76F8_u5173" class="headerlink" title="JavaScript相关"></a>JavaScript相关</h3><ul>
+<li>DOM操作——怎样添加、移除、移动、复制、创建和查找节点</li>
+<li>null和undefined的区别？</li>
+<li>new操作符具体干了什么呢?</li>
+<li>JSON 的了解？</li>
+<li>js延迟加载的方式有哪些</li>
+<li>如何解决跨域问题</li>
+<li>documen.write和 innerHTML的区别</li>
+<li>.call() 和 .apply() 的区别和作用</li>
+<li>哪些操作会造成内存泄漏？</li>
+<li>JavaScript中的作用域与变量声明提升</li>
+<li>如何判断当前脚本运行在浏览器还是node环境中？</li>
+<li>javascript对象的几种创建方式</li>
+<li>JavaScript原型，原型链 ? 有什么特点？</li>
+<li>javascript继承的6种方法，如何避免原型链上面的对象共享</li>
+<li>ajax过程</li>
+<li>ajax 是什么?ajax 的交互模型?同步和异步的区别?如何解决跨域问题?</li>
+<li>异步加载和延迟加载</li>
+<li>GET和POST的区别，何时使用POST？</li>
+<li>哪些地方会出现css阻塞，哪些地方会出现js阻塞？</li>
+<li>Javascript无阻塞加载具体方式</li>
+<li>闭包相关问题？</li>
+<li>js事件处理程序问题？</li>
+<li>eval是做什么的？</li>
+<li>事件、IE与火狐的事件机制有什么区别？ 如何阻止冒泡？</li>
+<li>AMD和CMD 规范的区别？</li>
+<li>如何获取UA？</li>
+<li>请你谈谈Cookie的弊端</li>
+<li>浏览器本地存储</li>
+<li>web storage和cookie的区别</li>
+</ul>
+<h3 id="Node_u76F8_u5173"><a href="#Node_u76F8_u5173" class="headerlink" title="Node相关"></a>Node相关</h3><ul>
+<li>Node.js的适用场景？</li>
+<li>对Node的优点和缺点提出了自己的看法？</li>
+</ul>
+<h3 id="u7EFC_u5408_u6027"><a href="#u7EFC_u5408_u6027" class="headerlink" title="综合性"></a>综合性</h3><ul>
+<li>页面重构怎么操作？</li>
+<li>网站重构的理解？</li>
+<li>WEB应用从服务器主动推送Data到客户端有那些方式？</li>
+<li>HTTP状态码</li>
+<li>cachecontrol</li>
+<li>你遇到过比较难的技术问题是？你是如何解决的？</li>
+<li>常使用的库有哪些？常用的前端开发工具？开发过什么应用或组件？</li>
+<li>列举IE 与其他浏览器不一样的特性？</li>
+<li>99%的网站都需要被重构是那本书上写的？</li>
+<li>什么叫优雅降级和渐进增强？</li>
+<li>除了前端以外还了解什么其它技术么？你最最厉害的技能是什么？</li>
+<li>你常用的开发工具是什么，为什么？</li>
+<li>对前端界面工程师这个职位是怎么样理解的？它的前景会怎么样？</li>
+<li>你在现在的团队处于什么样的角色，起到了什么明显的作用？</li>
+<li>你认为怎样才是全端工程师（Full Stack developer）？</li>
+<li>介绍一个你最得意的作品吧？ #</li>
+<li>项目中遇到什么问题？如何解决？</li>
+<li>你的优点是什么？缺点是什么？</li>
+<li>如何管理前端团队?</li>
+<li>最近在学什么？能谈谈你未来3，5年给自己的规划吗？</li>
+</ul>
+<h3 id="u7F16_u7801_u7C7B"><a href="#u7F16_u7801_u7C7B" class="headerlink" title="编码类"></a>编码类</h3><ul>
+<li>js对象的深度克隆</li>
+<li>写一个通用的事件侦听器函数?</li>
+<li>js数组去重</li>
+<li>js操作获取和设置cookie</li>
+</ul>
+<h3 id="u672A_u5206_u7C7B"><a href="#u672A_u5206_u7C7B" class="headerlink" title="未分类"></a>未分类</h3><ul>
+<li>线程与进程的区别 </li>
+<li>你如何对网站的文件和资源进行优化</li>
+<li>请说出三种减少页面加载时间的方法</li>
+<li>你都使用哪些工具来测试代码的性能？</li>
+<li>什么是 FOUC（无样式内容闪烁）？你如何来避免 FOUC？</li>
+<li>你有哪些性能优化的方法？</li>
+<li>http状态码有那些？分别代表是什么意思？</li>
+<li>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</li>
+<li>平时如何管理你的项目？</li>
+<li>说说最近最流行的一些东西吧？常去哪些网站？</li>
+<li>前端安全问题？</li>
+<li>ie各版本和chrome可以并行下载多少个资源</li>
+<li>grunt， YUI compressor 和 google clojure用来进行代码压缩的用法</li>
+<li>Flash、Ajax各自的优缺点，在使用中如何取舍？</li>
+<li>请解释一下 JavaScript 的同源策略</li>
+<li>为什么要有同源限制？</li>
+<li>什么是 “use strict”; ? 使用它的好处和坏处分别是什么？</li>
+</ul>
 
       
     </div>
@@ -238,18 +346,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/04/12/centos7下安装mysql/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          centos7下安装mysql
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/04/02/express4-x体验/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">express4.x体验</div>
+    <a href="/2016/04/05/camera/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">小米智能摄像机体验之旅</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -265,7 +364,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="markdown" data-title="给你的markdown产出图片增加lazy" data-url="http://www.liushaohua.cn/2015/04/10/markdown/"></div>
+	<div class="ds-thread" data-thread-key="f2e" data-title="web前端开发面试题整理" data-url="http://www.liushaohua.cn/2016/04/15/f2e/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
