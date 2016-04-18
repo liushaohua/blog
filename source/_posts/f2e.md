@@ -63,6 +63,7 @@ tags:
 - 请你谈谈Cookie的弊端
 - 浏览器本地存储
 - web storage和cookie的区别
+- 简述在IE下mouseover和mouseenter
 
 ### Node相关
 - Node.js的适用场景？
@@ -90,11 +91,95 @@ tags:
 - 如何管理前端团队?
 - 最近在学什么？能谈谈你未来3，5年给自己的规划吗？
 
+### 逻辑判断&&输出
+
+#### html&&css
+- 写出下列代码在各个浏览器中的颜色值?
+```html
+background: red;
+_background: green;
+*background: blue;
+background: black\9;
+```
+- 添加些css让其水平垂直居中。
+```html
+<div style="____________________________">
+    颜海镜
+</div>
+```
+- 如下代码，在空白处填写代码，是其点击时，前景色为白色，背景色为黑色
+```html
+<div onclick="_________________">颜海镜</div>
+```
+
+#### javascript
+- 下面代码的输出值是？
+```javascript
+alert(1&&2);
+```
+- 写出下面代码的输出值：
+```javascript
+var obj = {
+    a: 1,
+    b: function () {console.log(this.a)}
+};
+
+var a = 2;
+var objb = obj.b;
+
+obj.b();
+objb();
+obj.b.call(window);
+```
+- 写出下列代码的输出值：
+```javascript
+function A() {
+
+}
+function B(a) {
+    this.a = a;
+}
+function C(a) {
+    if (a) {
+        this.a = a;
+    }
+}
+
+A.prototype.a = 1;
+B.prototype.a = 1;
+C.prototype.a = 1;
+
+console.log(new A());
+console.log(new B());
+console.log(new C(2));
+```
+- 写出下列代码的输出值：
+```javascript
+var a = 1;
+function b() {
+    var a = 2;
+    function c() {
+        console.log(a);
+    }
+
+    return c;
+}
+
+b()();
+```
+
+- 书写代码，点击时从1分钟开始，每秒递减到0。
+```html
+<div onclick="test();">颜海镜</div>
+```
+
+
 ### 编码类
 - js对象的深度克隆
 - 写一个通用的事件侦听器函数?
 - js数组去重
 - js操作获取和设置cookie
+- 正则表达式匹配，开头为11N, 12N或1NNN，后面是-7-8个数字的电话号码。
 
 ### 未分类
 - 线程与进程的区别 
