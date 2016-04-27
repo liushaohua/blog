@@ -174,6 +174,96 @@ b()();
 <div onclick="test();">颜海镜</div>
 ```
 
+- 前端必备知识
+```javascript
+//1
+(function(){
+  return typeof arguments;
+})();
+
+//2
+var f = function g(){ 
+  return 23; 
+};
+typeof g();
+
+//3
+(function(x){
+  delete x;
+  return x;
+})(1);
+
+//4
+var y = 1, x = y = typeof x;
+x;
+
+//5
+(function f(f){
+  return typeof f();
+})(function(){ return 1; });
+
+//6
+var foo = {
+  bar: function() {
+    return this.baz; 
+  },
+  baz: 1
+};
+(function(){
+  return typeof arguments[0]();
+})(foo.bar);
+
+//7
+var foo = {
+  bar: function(){
+    return this.baz; 
+  },
+  baz: 1
+}
+typeof (f = foo.bar)();
+
+//8
+var f = (
+  function f(){ 
+    return "1"; 
+  }, 
+  function g(){ 
+    return 2; 
+  }
+)();
+typeof f;
+
+//9
+var x = 1;
+if (function f(){}) {
+  x += typeof f;
+}
+x;
+
+//10
+var x = [typeof x, typeof y][1];
+typeof typeof x;
+
+//11
+(function(foo){
+  return typeof foo.bar;
+})({ foo: { bar: 1 } });
+
+//12
+(function f(){
+  function f(){ return 1; }
+  return f();
+  function f(){ return 2; }
+})();
+
+//13
+function f(){ return f; }
+new f() instanceof f;
+
+//14
+with (function(x, undefined){}) length;
+```
+
 
 ### 编码类
 - js对象的深度克隆
