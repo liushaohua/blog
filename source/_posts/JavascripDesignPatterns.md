@@ -46,7 +46,7 @@ let getSingle = function (fn) {
     }
 }
 
-let createLoginLayer = function () {
+let createLoginLayer = () => {
     let div = document.createElement('div');
     div.innerHTML = 'im loginWindow';
     div.style.display = 'none';
@@ -90,7 +90,7 @@ render();
  *
  */
 
-let getActiveUploadObj => () { //IE上传控件
+let getActiveUploadObj = () => { //IE上传控件
  try {
 	 return new ActiveXObject('TXFTNActive.FTNupload');
  } catch (e) {
@@ -98,7 +98,7 @@ let getActiveUploadObj => () { //IE上传控件
  }
 };
 
-let getFlashUploadObj => () {  //supportFlash flash上传
+let getFlashUploadObj = () => {  //supportFlash flash上传
  if (supportFlash()) {
 	 let str = '<object type="application/x-shockwave-flash"></object>';
 	 return $(str).appendTo($('body'));
@@ -107,12 +107,12 @@ let getFlashUploadObj => () {  //supportFlash flash上传
  return false;
 }
 
-let getFormUpladObj => () {    //表单上传
+let getFormUpladObj = () => {    //表单上传
  var str = 'input name="file" type="file" class="ui-file"/>';
  return $(str).appendTo($('body'));
 }
 
-let iteratorUploadObj => () {
+let iteratorUploadObj = () => {
  for (let i = 0,fn; fn = arguments[i++];) {
 	 let uploadObj = fn();
 	 if (uploadObj !== false) {
