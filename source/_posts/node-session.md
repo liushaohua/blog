@@ -8,34 +8,6 @@ Session:在计算机中，尤其是在网络应用中，称为`会话控制`。S
 
 <!-- more -->
 
-### cookie的实现
-```javascript
-var http = require('http');
-var url = require('url');
-var querystring = require('querystring');
-http.createServer(function(request,response){
-    var urlObj = url.parse(request.url,true);
-    var pathname = urlObj.pathname;
-    if('/favicon.ico' == pathname){
-        return response.end('404');
-    }else if(pathname == '/write'){
-		//设置cookie
-        response.writeHead(200,{'Content-Type':'text/html',"Set-Cookie":["name=abc","isAdmin=0"]});
-        response.end('hello');
-    }else{
-        var cookie = request.headers.cookie;
-        var cookieObj = querystring.parse(cookie,'; ');
-        response.setHeader('Content-Type',"text/html;charset=utf-8");
-        if(cookieObj.name){
-            var isAdmin = cookieObj.isAdmin==1?"管理员":"普通用户";
-            response.end('欢迎老用户,你是'+isAdmin);
-        }else{
-            response.end('欢迎新用户');
-        }
-    }
-}).listen(8080);
-```
-
 ### Session的实现
 ```javascript
 var http = require('http');

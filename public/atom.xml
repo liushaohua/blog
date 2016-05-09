@@ -590,6 +590,29 @@
   </entry>
   
   <entry>
+    <title><![CDATA[基于Node.js的前后端分离]]></title>
+    <link href="http://www.liushaohua.cn/2014/06/13/fe-rd-dev/"/>
+    <id>http://www.liushaohua.cn/2014/06/13/fe-rd-dev/</id>
+    <published>2014-06-13T02:11:27.000Z</published>
+    <updated>2016-05-09T02:58:37.708Z</updated>
+    <content type="html"><![CDATA[<p>前言：前后端分离是一个老生常谈的话题了。文章同步</p>
+<ul>
+<li>(taobao)[<a href="http://ued.taobao.org/blog/2014/04/full-stack-development-with-nodejs/,https://www.zhihu.com/question/28207685,http://www.jb51.net/article/55672.htm" target="_blank" rel="external">http://ued.taobao.org/blog/2014/04/full-stack-development-with-nodejs/,https://www.zhihu.com/question/28207685,http://www.jb51.net/article/55672.htm</a>]</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>前言：前后端分离是一个老生常谈的话题了。文章同步</p>
+<ul>
+<li>(taobao)[<a href="http://ued.taobao.org/blog/2014/04/full-stack-development-with-nodejs/,https://ww]]>
+    </summary>
+    
+      <category term="node.js" scheme="http://www.liushaohua.cn/tags/node-js/"/>
+    
+      <category term="前后端分离" scheme="http://www.liushaohua.cn/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[JavaScript设计模式]]></title>
     <link href="http://www.liushaohua.cn/2014/06/01/JavascripDesignPatterns/"/>
     <id>http://www.liushaohua.cn/2014/06/01/JavascripDesignPatterns/</id>
@@ -614,10 +637,9 @@
     <link href="http://www.liushaohua.cn/2014/04/14/node-session/"/>
     <id>http://www.liushaohua.cn/2014/04/14/node-session/</id>
     <published>2014-04-14T06:10:54.000Z</published>
-    <updated>2016-05-06T05:47:11.667Z</updated>
+    <updated>2016-05-09T03:43:54.143Z</updated>
     <content type="html"><![CDATA[<p>Session:在计算机中，尤其是在网络应用中，称为<code>会话控制</code>。Session 对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当用户请求来自应用程序的 Web 页时，如果该用户还没有会话，则 Web 服务器将自动创建一个 Session 对象。当会话过期或被放弃后，服务器将终止该会话。Session 对象最常见的一个用法就是存储用户的首选项。例如，如果用户指明不喜欢查看图形，就可以将该信息存储在 Session 对象中。注意<code>会话状态仅在支持 cookie 的浏览器中保留</code>。</p>
 <a id="more"></a>
-<h3 id="cookie_u7684_u5B9E_u73B0"><a href="#cookie_u7684_u5B9E_u73B0" class="headerlink" title="cookie的实现"></a>cookie的实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> urlObj = url.parse(request.url,<span class="literal">true</span>);</span><br><span class="line">    <span class="keyword">var</span> pathname = urlObj.pathname;</span><br><span class="line">    <span class="keyword">if</span>(<span class="string">'/favicon.ico'</span> == pathname)&#123;</span><br><span class="line">        <span class="keyword">return</span> response.end(<span class="string">'404'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pathname == <span class="string">'/write'</span>)&#123;</span><br><span class="line">		<span class="comment">//设置cookie</span></span><br><span class="line">        response.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html'</span>,<span class="string">"Set-Cookie"</span>:[<span class="string">"name=abc"</span>,<span class="string">"isAdmin=0"</span>]&#125;);</span><br><span class="line">        response.end(<span class="string">'hello'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> cookie = request.headers.cookie;</span><br><span class="line">        <span class="keyword">var</span> cookieObj = querystring.parse(cookie,<span class="string">'; '</span>);</span><br><span class="line">        response.setHeader(<span class="string">'Content-Type'</span>,<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line">        <span class="keyword">if</span>(cookieObj.name)&#123;</span><br><span class="line">            <span class="keyword">var</span> isAdmin = cookieObj.isAdmin==<span class="number">1</span>?<span class="string">"管理员"</span>:<span class="string">"普通用户"</span>;</span><br><span class="line">            response.end(<span class="string">'欢迎老用户,你是'</span>+isAdmin);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            response.end(<span class="string">'欢迎新用户'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="Session_u7684_u5B9E_u73B0"><a href="#Session_u7684_u5B9E_u73B0" class="headerlink" title="Session的实现"></a>Session的实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"><span class="keyword">var</span> SESSION_KEY = <span class="string">'sessionKey'</span>;</span><br><span class="line"><span class="keyword">var</span> session = &#123;&#125;;</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> urlObj = url.parse(req.url);</span><br><span class="line">    <span class="keyword">var</span> pathname = urlObj.pathname;</span><br><span class="line">    <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">    <span class="keyword">if</span>(pathname==<span class="string">'/favicon.ico'</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> res.end(<span class="string">'404'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> cookie = req.headers.cookie;</span><br><span class="line">        <span class="keyword">var</span> cookieObj = querystring.parse(cookie,<span class="string">'; '</span>);</span><br><span class="line">        res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">"text/html;charset=utf-8"</span>&#125;);</span><br><span class="line">        <span class="keyword">if</span>(cookieObj[SESSION_KEY])&#123;</span><br><span class="line">            <span class="keyword">var</span> id = cookieObj[SESSION_KEY];</span><br><span class="line">            <span class="keyword">var</span> obj = session[id];</span><br><span class="line">            <span class="keyword">if</span>(obj)&#123;</span><br><span class="line">                <span class="keyword">if</span>(obj.mny&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">                    res.end(<span class="string">"次数用完，请重新办理"</span>);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    obj.mny -= <span class="number">1</span>;</span><br><span class="line">                    res.end(<span class="string">'欢迎你，老顾客，你的可用次数为'</span>+obj.mny);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">var</span> sessionId = now+<span class="string">'_'</span>+<span class="built_in">Math</span>.random();<span class="comment">//卡号</span></span><br><span class="line">                <span class="keyword">var</span> sessionObj = &#123;mny:<span class="number">10</span>&#125;;<span class="comment">//会员卡的信息</span></span><br><span class="line">                session[sessionId] = sessionObj;</span><br><span class="line">                res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">"text/html;charset=utf-8"</span>,<span class="string">"Set-Cookie"</span>:SESSION_KEY+<span class="string">'='</span>+sessionId&#125;);</span><br><span class="line">                res.end(<span class="string">'老顾客，但你的会员卡我们找不到对应关系了，再送你一张剪发卡，次数为10次'</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;<span class="comment">//没有访问过</span></span><br><span class="line">            <span class="keyword">var</span> sessionId = now+<span class="string">'_'</span>+<span class="built_in">Math</span>.random();<span class="comment">//卡号</span></span><br><span class="line">            <span class="keyword">var</span> sessionObj = &#123;mny:<span class="number">100</span>&#125;;<span class="comment">//会员卡的信息</span></span><br><span class="line">            session[sessionId] = sessionObj;</span><br><span class="line">            res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">"text/html;charset=utf-8"</span>,<span class="string">"Set-Cookie"</span>:SESSION_KEY+<span class="string">'='</span>+sessionId&#125;);</span><br><span class="line">            res.end(<span class="string">'新顾客，送你一张剪发卡，次数为10次'</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>]]></content>
     <summary type="html">
     <![CDATA[<p>Session:在计算机中，尤其是在网络应用中，称为<code>会话控制</code>。Session 对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当用户请求来自应用程序的 Web 页时，如果该用户还没有会话，则 Web 服务器将自动创建一个 Session 对象。当会话过期或被放弃后，服务器将终止该会话。Session 对象最常见的一个用法就是存储用户的首选项。例如，如果用户指明不喜欢查看图形，就可以将该信息存储在 Session 对象中。注意<code>会话状态仅在支持 cookie 的浏览器中保留</code>。</p>]]>
@@ -631,19 +653,29 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Node学习笔记-HTTP]]></title>
+    <title><![CDATA[Node学习笔记-Cookie]]></title>
     <link href="http://www.liushaohua.cn/2014/04/14/node-cookie/"/>
     <id>http://www.liushaohua.cn/2014/04/14/node-cookie/</id>
     <published>2014-04-14T01:42:54.000Z</published>
-    <updated>2016-05-05T01:56:55.816Z</updated>
-    <content type="html"><![CDATA[<p>占楼</p>
+    <updated>2016-05-09T10:53:14.552Z</updated>
+    <content type="html"><![CDATA[<p>科普:Cookie(点心)是由服务器端生成，发送给User-Agent（一般是浏览器），浏览器会将Cookie的key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie名称和值可以由服务器端开发自己定义,服务器可以设置或读取Cookies中包含信息，借此维护用户跟服务器会话中的状态</p>
+<h3 id="Cookie_u5229_u5F0A"><a href="#Cookie_u5229_u5F0A" class="headerlink" title="Cookie利弊"></a>Cookie利弊</h3><ul>
+<li>一旦服务器向客户端发了cookie,以后除非 cookie过期，否则浏览器每次都会向服务器发cookie</li>
+<li>存放在客户端，容易被篡改</li>
+</ul>
+<h3 id="u5DE5_u4F5C_u539F_u7406"><a href="#u5DE5_u4F5C_u539F_u7406" class="headerlink" title="工作原理"></a>工作原理</h3><p>一般来说，Cookie通过HTTP Headers从服务器端返回到浏览器上。首先，服务器端在响应中利用Set-Cookie header来创建一个Cookie ，然后，浏览器在它的请求中通过Cookie header包含这个已经创建的Cookie，并且把它返回至服务器，从而完成浏览器的论证。</p>
+<h3 id="u5EFA_u8BAE_u4F18_u5316_u70B9"><a href="#u5EFA_u8BAE_u4F18_u5316_u70B9" class="headerlink" title="建议优化点"></a>建议优化点</h3><ul>
+<li>不要存储私密数据(or 强加密)</li>
+<li>正确的设置path domain 以减少cookie的发送</li>
+<li>正确的设置httpOnly防止cookie被篡改</li>
+</ul>
+<h3 id="cookie_u7684_u4F7F_u7528"><a href="#cookie_u7684_u4F7F_u7528" class="headerlink" title="cookie的使用"></a>cookie的使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> urlObj = url.parse(request.url,<span class="literal">true</span>);</span><br><span class="line">    <span class="keyword">var</span> pathname = urlObj.pathname;</span><br><span class="line">    <span class="keyword">if</span>(<span class="string">'/favicon.ico'</span> == pathname)&#123;</span><br><span class="line">        <span class="keyword">return</span> response.end(<span class="string">'404'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pathname == <span class="string">'/write'</span>)&#123;</span><br><span class="line">		<span class="comment">//设置cookie</span></span><br><span class="line">        response.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html'</span>,<span class="string">"Set-Cookie"</span>:[<span class="string">"name=abc"</span>,<span class="string">"isAdmin=0"</span>]&#125;);</span><br><span class="line">        response.end(<span class="string">'hello'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> cookie = request.headers.cookie;</span><br><span class="line">        <span class="keyword">var</span> cookieObj = querystring.parse(cookie,<span class="string">'; '</span>);</span><br><span class="line">        response.setHeader(<span class="string">'Content-Type'</span>,<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line">        <span class="keyword">if</span>(cookieObj.name)&#123;</span><br><span class="line">            <span class="keyword">var</span> isAdmin = cookieObj.isAdmin==<span class="number">1</span>?<span class="string">"管理员"</span>:<span class="string">"普通用户"</span>;</span><br><span class="line">            response.end(<span class="string">'欢迎老用户,你是'</span>+isAdmin);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            response.end(<span class="string">'欢迎新用户'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>占楼</p>
-]]>
+    <![CDATA[<p>科普:Cookie(点心)是由服务器端生成，发送给User-Agent（一般是浏览器），浏览器会将Cookie的key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie名称和值可以由服]]>
     </summary>
     
-      <category term="HTTP" scheme="http://www.liushaohua.cn/tags/HTTP/"/>
+      <category term="Cookie" scheme="http://www.liushaohua.cn/tags/Cookie/"/>
     
       <category term="node.js" scheme="http://www.liushaohua.cn/tags/node-js/"/>
     
@@ -716,109 +748,6 @@
     </summary>
     
       <category term="Tcp" scheme="http://www.liushaohua.cn/tags/Tcp/"/>
-    
-      <category term="node.js" scheme="http://www.liushaohua.cn/tags/node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Node学习笔记-Stream]]></title>
-    <link href="http://www.liushaohua.cn/2014/04/11/node-stream/"/>
-    <id>http://www.liushaohua.cn/2014/04/11/node-stream/</id>
-    <published>2014-04-11T01:55:25.000Z</published>
-    <updated>2016-02-22T07:24:23.294Z</updated>
-    <content type="html"><![CDATA[<p>在Node的使用中，我们会频繁的接触到<code>Stream</code>,并且内建stream模块已经被多个Node核心模块使用，同时也可以被用户自定义的模块使用。<code>Stream</code>到底是什么，用来做什么，最近查阅了写资料并进行了整理，简单总结下供自己查阅。</p>
-<a id="more"></a>
-<h3 id="u7B80_u4ECB"><a href="#u7B80_u4ECB" class="headerlink" title="简介"></a>简介</h3><p><a href="http://nodeapi.ucdok.com/#/api/stream.html" target="_blank" rel="external">官方文档</a>上是这么说的：<code>流是一个抽象接口，被 Node 中的很多对象所实现。比如对一个 HTTP 服务器的请求是一个流，stdout 也是一个流。流是可读、可写或兼具两者的。所有流都是 EventEmitter 的实例。</code> 流又包括四类流， <code>Readable</code> 流、<code>Writable</code> 流、<code>Duplex</code> 流和<code>Transform</code>流，具体的异同会在下文中说到.</p>
-<h3 id="u6D41_u7684_u7528_u9014"><a href="#u6D41_u7684_u7528_u9014" class="headerlink" title="流的用途"></a>流的用途</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>),</span><br><span class="line">    fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> server = http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    fs.readFile(__dirname + <span class="string">'/data.txt'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">        res.end(data);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">8000</span>);</span><br></pre></td></tr></table></figure>
-<p>上面代码没什么问题,每次请求我们都会把整个data.txt文件读入到内存中，然后把结果返回客户端，但是通常大文件的一次读取和大量用户的高并发都会占用很大的内存，而<code>流</code>则可以分段读取，方便粗暴，大大的方便了我们。</p>
-<h3 id="u5982_u4F55_u4F7F_u7528"><a href="#u5982_u4F55_u4F7F_u7528" class="headerlink" title="如何使用"></a>如何使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 流的分类</span><br><span class="line"> * 可读流 可以从中流出字节内容</span><br><span class="line"> * 可写流 可以把字节写入流中</span><br><span class="line"> * 继承 Readable</span><br><span class="line"> * 继承 EventEmitter</span><br><span class="line"> * @type &#123;exports|module.exports&#125;</span><br><span class="line"> **/</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">//Readable</span></span><br><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>),</span><br><span class="line">    rs = fs.createReadStream(<span class="string">'data.txt'</span>);</span><br><span class="line">	</span><br><span class="line">rs.on(<span class="string">'open'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'打开文件'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//只有当监听了data事件之后才开始真正读取，不监听的话下面的其他方法`end`,'close','error'自然也不会触发</span></span><br><span class="line">rs.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//console.log('操作');</span></span><br><span class="line">    rs.pause();<span class="comment">//等待操作完成          暂停流的发射事件 关掉开关</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'操作完成'</span>);</span><br><span class="line">        rs.resume();<span class="comment">//再次执行操作     重新开始恢复 读取 打开开关</span></span><br><span class="line">    &#125;,<span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line">rs.on(<span class="string">'end'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件内容读取完毕'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">rs.on(<span class="string">'close'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件关闭'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">rs.on(<span class="string">'error'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="u5927_u5BB6_u53EF_u4EE5_u770B_u51FA_u6765_uFF0CReadable_u6D41_u6709_u4EE5_u4E0B_u51E0_u4E2A_u4E8B_u4EF6_uFF1A"><a href="#u5927_u5BB6_u53EF_u4EE5_u770B_u51FA_u6765_uFF0CReadable_u6D41_u6709_u4EE5_u4E0B_u51E0_u4E2A_u4E8B_u4EF6_uFF1A" class="headerlink" title="大家可以看出来，Readable流有以下几个事件："></a>大家可以看出来，<code>Readable</code>流有以下几个事件：</h3><ul>
-<li>当一个数据块可以从流中被读出时，它会触发一个 <code>readable</code> 事件</li>
-<li><code>data</code>事件 - 数据正在传递时，触发该事件（以chunk数据块为对象）</li>
-<li><code>end</code>事件 - 数据传递完成后，会触发该事件。</li>
-<li><code>close</code>事件 - 当底层数据源（比如，源头的文件描述符）被关闭时触发。并不是所有流都会触发这个事件。</li>
-<li><code>error</code>事件 - 数据接收异常时，会触发该事件</li>
-</ul>
-<h3 id="u65B9_u4FBF_u7684API"><a href="#u65B9_u4FBF_u7684API" class="headerlink" title="方便的API"></a>方便的API</h3><p>Node还给我提供了简洁的API，供我们使用，而且<code>req</code>,<code>res</code>参数都是流对象,读文件的代码我们就可以调整下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> stream = fs.createReadStream(__dirname + <span class="string">'/data.txt'</span>);</span><br><span class="line">    stream.pipe(res);</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">8000</span>);</span><br></pre></td></tr></table></figure></p>
-<p><code>.pipe</code>方法会自动帮助我们监听data和end事件。上面的这段代码不仅简洁，而且<code>data.txt</code>文件中每一小段数据都将源源不断的发送到客户端。<br>除此之外，使用<code>.pipe()</code>方法还有别的好处，比如说它可以自动控制后端压力，以便在客户端连接缓慢的时候node可以将尽可能少的缓存放到内存中。</p>
-<h3 id="pipe"><a href="#pipe" class="headerlink" title="pipe"></a>pipe</h3><p>readable.pipe(destination, [options])</p>
-<ul>
-<li>实现流的输入和输出功能</li>
-<li>destination {Writable Stream} 写入数据的目标</li>
-<li>options {Object} 导流选项</li>
-<li>end {Boolean} 在读取者结束时结束写入者。缺省为 true</li>
-</ul>
-<h3 id="Stream_u4E2D_u76844_u5927_u5929_u738B"><a href="#Stream_u4E2D_u76844_u5927_u5929_u738B" class="headerlink" title="Stream中的4大天王"></a>Stream中的4大<code>天王</code></h3><table>
-<thead>
-<tr>
-<th>类</th>
-<th style="text-align:center">使用场景</th>
-<th style="text-align:right">实现的方法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Readable</td>
-<td style="text-align:center">只读</td>
-<td style="text-align:right">_read</td>
-</tr>
-<tr>
-<td>Writable</td>
-<td style="text-align:center">只写</td>
-<td style="text-align:right">_write</td>
-</tr>
-<tr>
-<td>Duplex</td>
-<td style="text-align:center">读写</td>
-<td style="text-align:right">_read,_write</td>
-</tr>
-<tr>
-<td>Transform</td>
-<td style="text-align:center">操作被写入的数据，然后读出结果</td>
-<td style="text-align:right">_transform,flush</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>Readable流（可读流）介绍</p>
-<ul>
-<li>Readable（可读）流接口是对您正在读取的数据的来源的抽象。换言之，数据出自一个可读流。</li>
-<li>Readable 流有两种“模式”：流动模式和暂停模式。</li>
-<li>当处于流动模式时，数据由底层系统读出，并尽可能快地提供给您的程序；当处于暂停模式时，您必须明确地调用 stream.read() 来取出若干数据块。流默认处于暂停模式。</li>
-<li>Readable流拥有的事件，已经在<code>本文的开始</code>介绍过了。</li>
-</ul>
-</li>
-<li><p>Writable流（可写流）介绍    </p>
-<ul>
-<li>Writable（可写）流接口是对写入数据的目标的抽象。</li>
-<li><code>write()</code>方法 该方法向底层系统写入数据，并在数据被处理完毕后调用所给的回调。</li>
-<li><code>end()</code>方法 当不再写入数据时，调用该方法，停止写入。</li>
-</ul>
-</li>
-<li><p>Duplex(双工流) 介绍</p>
-<ul>
-<li>Duplex（可读写）流同时兼具可读和可写特性，比如一个 TCP 嵌套字连接。</li>
-<li>值得注意的是，stream.Duplex 是一个可以像 Readable 或 Writable 一样被扩充、实现了底层方法 _read(sise) 和 _write(chunk, encoding, callback) 的抽象类</li>
-</ul>
-</li>
-<li><p>Transform（转换流）介绍</p>
-<ul>
-<li>“转换”（transform）流实际上是一个输出与输入存在因果关系的双工流，比如 zlib 流或 crypto 流。</li>
-<li>输入和输出并无要求相同大小、相同块数或同时到达。举个例子，一个 Hash 流只会在输入结束时产生一个数据块的输出；一个 zlib 流会产生比输入小得多或大得多的输出。</li>
-</ul>
-</li>
-</ul>
-<h3 id="u53C2_u8003_u8D44_u6599"><a href="#u53C2_u8003_u8D44_u6599" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
-<li><a href="http://nodeapi.ucdok.com/api/" target="_blank" rel="external">NodeAPI</a></li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>在Node的使用中，我们会频繁的接触到<code>Stream</code>,并且内建stream模块已经被多个Node核心模块使用，同时也可以被用户自定义的模块使用。<code>Stream</code>到底是什么，用来做什么，最近查阅了写资料并进行了整理，简单总结下供自己查阅。</p>]]>
-    
-    </summary>
-    
-      <category term="Stream" scheme="http://www.liushaohua.cn/tags/Stream/"/>
     
       <category term="node.js" scheme="http://www.liushaohua.cn/tags/node-js/"/>
     
