@@ -461,11 +461,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前言：前后端分离是一个老生常谈的话题了。文章同步</p>
-<ul>
-<li>(taobao)[<a href="http://ued.taobao.org/blog/2014/04/full-stack-development-with-nodejs/,https://www.zhihu.com/question/28207685,http://www.jb51.net/article/55672.htm" target="_blank" rel="external">http://ued.taobao.org/blog/2014/04/full-stack-development-with-nodejs/,https://www.zhihu.com/question/28207685,http://www.jb51.net/article/55672.htm</a>]</li>
-</ul>
-
+        <p>前言：前后端分离是一个老生常谈的话题了,工作了近5年，我也体验过分离与不分离的项目，我早年工作的是时候，是前端开发静态页面与交互，后端负责套模板写数据交互，各种酸爽你懂的，有事没事就叫我们前端过去帮忙调页面，无非出现的问题就是标签没闭合或者套错层级orJS看不懂等一些低级问题，导致我们前端没有成就感，一直在不停的切页面填坑，在后来经历过前端负责写页面，全站ajax，后端负责底层数据&amp;接口等，虽然前端有了一定话语权and制造线上bug风险的权利了但是这种开发模式也不是最优，脱离了后端模板引擎对于同步渲染与seo都造成了一定问题，再后来到了X度迎来了曙光，这才是真正意义上的前后端分离，这里前端负责开发smarty模板,后端负责数据透传与模板召回，前后端完全解耦也不存在同步渲染的问题了，后端语言不限c++，python都可以，前端唯一一点不好就是要熟悉smarty&amp;php相关，其他还好，再后来<code>后来 我总算学会了如何去爱 可惜你早已远去 消失在人海</code>,终于到了我今天想说的主题，<code>理想中的前后端分离</code>。</p>
       
     </div>
     
@@ -478,6 +474,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2014/06/13/fe-rd-dev/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -520,7 +520,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JavaScript中国的设计模式</p>
+        <p>JavaScript中的设计模式</p>
       
     </div>
     
@@ -639,18 +639,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>科普:Cookie(点心)是由服务器端生成，发送给User-Agent（一般是浏览器），浏览器会将Cookie的key/value保存到某个目录下的文本文件内，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie名称和值可以由服务器端开发自己定义,服务器可以设置或读取Cookies中包含信息，借此维护用户跟服务器会话中的状态</p>
-<h3 id="Cookie_u5229_u5F0A"><a href="#Cookie_u5229_u5F0A" class="headerlink" title="Cookie利弊"></a>Cookie利弊</h3><ul>
-<li>一旦服务器向客户端发了cookie,以后除非 cookie过期，否则浏览器每次都会向服务器发cookie</li>
-<li>存放在客户端，容易被篡改</li>
-</ul>
-<h3 id="u5DE5_u4F5C_u539F_u7406"><a href="#u5DE5_u4F5C_u539F_u7406" class="headerlink" title="工作原理"></a>工作原理</h3><p>一般来说，Cookie通过HTTP Headers从服务器端返回到浏览器上。首先，服务器端在响应中利用Set-Cookie header来创建一个Cookie ，然后，浏览器在它的请求中通过Cookie header包含这个已经创建的Cookie，并且把它返回至服务器，从而完成浏览器的论证。</p>
-<h3 id="u5EFA_u8BAE_u4F18_u5316_u70B9"><a href="#u5EFA_u8BAE_u4F18_u5316_u70B9" class="headerlink" title="建议优化点"></a>建议优化点</h3><ul>
-<li>不要存储私密数据(or 强加密)</li>
-<li>正确的设置path domain 以减少cookie的发送</li>
-<li>正确的设置httpOnly防止cookie被篡改</li>
-</ul>
-<h3 id="cookie_u7684_u4F7F_u7528"><a href="#cookie_u7684_u4F7F_u7528" class="headerlink" title="cookie的使用"></a>cookie的使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request,response</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> urlObj = url.parse(request.url,<span class="literal">true</span>);</span><br><span class="line">    <span class="keyword">var</span> pathname = urlObj.pathname;</span><br><span class="line">    <span class="keyword">if</span>(<span class="string">'/favicon.ico'</span> == pathname)&#123;</span><br><span class="line">        <span class="keyword">return</span> response.end(<span class="string">'404'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pathname == <span class="string">'/write'</span>)&#123;</span><br><span class="line">		<span class="comment">//设置cookie</span></span><br><span class="line">        response.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html'</span>,<span class="string">"Set-Cookie"</span>:[<span class="string">"name=abc"</span>,<span class="string">"isAdmin=0"</span>]&#125;);</span><br><span class="line">        response.end(<span class="string">'hello'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> cookie = request.headers.cookie;</span><br><span class="line">        <span class="keyword">var</span> cookieObj = querystring.parse(cookie,<span class="string">'; '</span>);</span><br><span class="line">        response.setHeader(<span class="string">'Content-Type'</span>,<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line">        <span class="keyword">if</span>(cookieObj.name)&#123;</span><br><span class="line">            <span class="keyword">var</span> isAdmin = cookieObj.isAdmin==<span class="number">1</span>?<span class="string">"管理员"</span>:<span class="string">"普通用户"</span>;</span><br><span class="line">            response.end(<span class="string">'欢迎老用户,你是'</span>+isAdmin);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            response.end(<span class="string">'欢迎新用户'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>
-
       
     </div>
     
@@ -663,6 +651,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2014/04/14/node-cookie/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

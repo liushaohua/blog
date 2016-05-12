@@ -55,3 +55,37 @@ http.createServer(function(req,res){
     }
 }).listen(8080);
 ```
+
+### express中使用session && 存储在redis
+
+```javascript
+var express = require('express');
+var session = require('express-session'); //如果要使用session，需要单独包含这个模块
+var cookieParser = require('cookie-parser'); //如果要使用cookie，需要显式包含这个模块
+var RedisStore = require('connect-redis')(session);
+var app = express();
+ 
+// 设置 Cookie
+app.use(cookieParser('abc'));
+ 
+// 设置 Session
+app.use(session({
+  store: new RedisStore({
+    host: "127.0.0.1",
+    port: 6379,
+    db: "test_session"
+  }),
+  resave:false,
+  saveUninitialized:false,
+  secret: 'keyboard cat'
+}))
+ 
+app.get("/", function(req, res) {
+  var session = req.session;
+  session.count = session.count || 0;
+  var n = session.count++;
+  res.send('hello, session id:' + session.id + ' count:' + n);
+});
+ 
+app.listen(8080);
+```
