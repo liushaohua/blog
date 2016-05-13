@@ -4,18 +4,24 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>给你的markdown产出图片增加lazy | 厘澄的小站-专注前端开发</title>
+  <title>JavaScript运算符优先级 | 厘澄的小站-专注前端开发</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。">
+  <meta name="description" content="1234var a = &amp;#123;n:1&amp;#125;; a.x = a = &amp;#123;n:2&amp;#125;; alert(a.x);// --&amp;gt; undefined alert(b.x);// --&amp;gt; &amp;#123;n:2&amp;#125;
+about这道题答案挺多的，我理解这涉及两个过程即求值过程和运算过程，求值过程都是从左到右，而运算过程有自己的运算顺序
+1a.x = a = &amp;#123">
 <meta property="og:type" content="article">
-<meta property="og:title" content="给你的markdown产出图片增加lazy">
-<meta property="og:url" content="http://www.liushaohua.cn/2015/04/10/markdown/index.html">
+<meta property="og:title" content="JavaScript运算符优先级">
+<meta property="og:url" content="http://www.liushaohua.cn/2013/05/13/JavaScript-operator/index.html">
 <meta property="og:site_name" content="厘澄的小站-专注前端开发">
-<meta property="og:description" content="Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。">
-<meta property="og:updated_time" content="2016-04-07T09:32:58.334Z">
+<meta property="og:description" content="1234var a = &amp;#123;n:1&amp;#125;; a.x = a = &amp;#123;n:2&amp;#125;; alert(a.x);// --&amp;gt; undefined alert(b.x);// --&amp;gt; &amp;#123;n:2&amp;#125;
+about这道题答案挺多的，我理解这涉及两个过程即求值过程和运算过程，求值过程都是从左到右，而运算过程有自己的运算顺序
+1a.x = a = &amp;#123">
+<meta property="og:updated_time" content="2016-05-13T03:18:40.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="给你的markdown产出图片增加lazy">
-<meta name="twitter:description" content="Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。">
+<meta name="twitter:title" content="JavaScript运算符优先级">
+<meta name="twitter:description" content="1234var a = &amp;#123;n:1&amp;#125;; a.x = a = &amp;#123;n:2&amp;#125;; alert(a.x);// --&amp;gt; undefined alert(b.x);// --&amp;gt; &amp;#123;n:2&amp;#125;
+about这道题答案挺多的，我理解这涉及两个过程即求值过程和运算过程，求值过程都是从左到右，而运算过程有自己的运算顺序
+1a.x = a = &amp;#123">
   
   
     <link rel="icon" href="/favicon.png">
@@ -191,11 +197,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaScript-operator" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/10/markdown/" class="article-date">
-	<time datetime="2015-04-10T07:32:34.000Z" itemprop="datePublished">2015-04-10</time>
+      <a href="/2013/05/13/JavaScript-operator/" class="article-date">
+	<time datetime="2013-05-13T01:53:05.000Z" itemprop="datePublished">2013-05-13</time>
 </a>
     </div>
   
@@ -206,7 +212,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      给你的markdown产出图片增加lazy
+      JavaScript运算符优先级
     </h1>
   
 
@@ -216,7 +222,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript运算符/">JavaScript运算符</a></li></ul>
 	</div>
 
         
@@ -227,8 +233,80 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Markdown 其实是一种轻量级的标记语言，使用过Markdown的人都会赞不绝口，Hexo和Ghost都支持用Markdown语法编写文章。<br><a id="more"></a><br>我的博客用的是hexo,试用Markdown语法插入一张图片很方便，只需要<code>![弥撒13](https://o3o97s3zl.qnssl.com/misa13.jpg?imageView2/2/w/800/q/90)</code>就可以了，解析后会给我们创建一个<code>&lt;img src=&quot;https://o3o97s3zl.qnssl.com/misa13.jpg?imageView2/2/w/800/q/90&quot; alt=&quot;弥撒13&quot;</code>,如果我们想增加一个width或者其他的class就不支持了，要么我们就更换其他引擎，要么就修改一下源代码，为了方便起见，我选择了第二个。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">cd node_modules/hexo-renderer-marked/node_modules/marked/lib</span><br><span class="line">vi marked.js 找到<span class="number">890</span>行，修改下img标签这</span><br><span class="line">Renderer.prototype.image = <span class="function"><span class="keyword">function</span>(<span class="params">href, title, text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> out = <span class="string">'&lt;img lazy-src="'</span> + href + <span class="string">'" alt="'</span> + text + <span class="string">'"'</span>;</span><br><span class="line">  <span class="keyword">if</span> (title) &#123;</span><br><span class="line">    out += <span class="string">' title="'</span> + title + <span class="string">'"'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  out += <span class="keyword">this</span>.options.xhtml ? <span class="string">'/&gt;'</span> : <span class="string">'&gt;'</span>;</span><br><span class="line">  <span class="keyword">return</span> out;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Renderer.prototype.text = <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> text;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>ok~ 搞定，如果要修改其他的语法的话也在这个JS文件中改一笔就完事了~~~</p>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;n:<span class="number">1</span>&#125;; </span><br><span class="line">a.x = a = &#123;n:<span class="number">2</span>&#125;; </span><br><span class="line">alert(a.x);<span class="comment">// --&gt; undefined </span></span><br><span class="line">alert(b.x);<span class="comment">// --&gt; &#123;n:2&#125;</span></span><br></pre></td></tr></table></figure>
+<p>about这道题答案挺多的，我理解这涉及两个过程即求值过程和运算过程，求值过程都是从左到右，而运算过程有自己的运算顺序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.x = a = &#123;n:<span class="number">2</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>这条语句中a.x a 和 {n:2}分别是三个表达式，需要先对他们求值，然后才会进行赋值操作，求值过程是先于赋值过程的</p>
+<h3 id="u4E0B_u8868_u5217_u51FA_u4E86_JavaScript__u8FD0_u7B97_u7B26_uFF0C_u5E76_u6309_u4F18_u5148_u7EA7_u987A_u5E8F_u4ECE_u9AD8_u5230_u4F4E_u6392_u5217_u3002__u5177_u6709_u76F8_u540C_u4F18_u5148_u7EA7_u7684_u8FD0_u7B97_u7B26_u6309_u4ECE_u5DE6_u81F3_u53F3_u7684_u987A_u5E8F_u8BA1_u7B97"><a href="#u4E0B_u8868_u5217_u51FA_u4E86_JavaScript__u8FD0_u7B97_u7B26_uFF0C_u5E76_u6309_u4F18_u5148_u7EA7_u987A_u5E8F_u4ECE_u9AD8_u5230_u4F4E_u6392_u5217_u3002__u5177_u6709_u76F8_u540C_u4F18_u5148_u7EA7_u7684_u8FD0_u7B97_u7B26_u6309_u4ECE_u5DE6_u81F3_u53F3_u7684_u987A_u5E8F_u8BA1_u7B97" class="headerlink" title="下表列出了 JavaScript 运算符，并按优先级顺序从高到低排列。 具有相同优先级的运算符按从左至右的顺序计算"></a>下表列出了 JavaScript 运算符，并按优先级顺序从高到低排列。 具有相同优先级的运算符按从左至右的顺序计算</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th style="text-align:center">说明       </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.[ ] ( )</td>
+<td style="text-align:center">字段访问、数组索引、函数调用和表达式分组</td>
+</tr>
+<tr>
+<td>++ – - ~ ! delete new typeof void</td>
+<td style="text-align:center">一元运算符、返回数据类型、对象创建、未定义的值</td>
+</tr>
+<tr>
+<td>* / %</td>
+<td style="text-align:center">相乘、相除、求余数</td>
+</tr>
+<tr>
+<td>+ - +</td>
+<td style="text-align:center">相加、相减、字符串串联</td>
+</tr>
+<tr>
+<td>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</td>
+<td style="text-align:center">移位</td>
+</tr>
+<tr>
+<td>&lt; &lt;= &gt; &gt;= instanceof</td>
+<td style="text-align:center">小于、小于或等于、大于、大于或等于、是否为特定类的实例</td>
+</tr>
+<tr>
+<td>== != === !==</td>
+<td style="text-align:center">相等、不相等、全等，不全等</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td style="text-align:center">按位“与”</td>
+</tr>
+<tr>
+<td>^</td>
+<td style="text-align:center">按位“异或”</td>
+</tr>
+<tr>
+<td>丨</td>
+<td style="text-align:center">按位“或”</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td style="text-align:center">逻辑“与”</td>
+</tr>
+<tr>
+<td>丨丨</td>
+<td style="text-align:center">逻辑“或”</td>
+</tr>
+<tr>
+<td>?:</td>
+<td style="text-align:center">条件运算</td>
+</tr>
+<tr>
+<td>= OP=</td>
+<td style="text-align:center">赋值、赋值运算（如 += 和 &amp;=）</td>
+</tr>
+<tr>
+<td>,</td>
+<td style="text-align:center">多个计算</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -238,20 +316,15 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/04/12/centos7下安装mysql/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/04/10/node-path/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          centos7下安装mysql
+          Node学习笔记-Path
         
       </div>
     </a>
   
-  
-    <a href="/2015/04/02/express4-x体验/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">express4.x体验</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
   
 </nav>
 
@@ -265,7 +338,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="markdown" data-title="给你的markdown产出图片增加lazy" data-url="http://www.liushaohua.cn/2015/04/10/markdown/"></div>
+	<div class="ds-thread" data-thread-key="JavaScript-operator" data-title="JavaScript运算符优先级" data-url="http://www.liushaohua.cn/2013/05/13/JavaScript-operator/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
