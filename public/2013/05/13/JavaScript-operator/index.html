@@ -16,7 +16,7 @@ about这道题答案挺多的，我理解这涉及两个过程即求值过程和
 <meta property="og:description" content="1234var a = &amp;#123;n:1&amp;#125;; a.x = a = &amp;#123;n:2&amp;#125;; alert(a.x);// --&amp;gt; undefined alert(b.x);// --&amp;gt; &amp;#123;n:2&amp;#125;
 about这道题答案挺多的，我理解这涉及两个过程即求值过程和运算过程，求值过程都是从左到右，而运算过程有自己的运算顺序
 1a.x = a = &amp;#123">
-<meta property="og:updated_time" content="2016-05-13T03:18:40.636Z">
+<meta property="og:updated_time" content="2016-05-13T03:22:45.054Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript运算符优先级">
 <meta name="twitter:description" content="1234var a = &amp;#123;n:1&amp;#125;; a.x = a = &amp;#123;n:2&amp;#125;; alert(a.x);// --&amp;gt; undefined alert(b.x);// --&amp;gt; &amp;#123;n:2&amp;#125;
@@ -237,6 +237,7 @@ about这道题答案挺多的，我理解这涉及两个过程即求值过程和
 <p>about这道题答案挺多的，我理解这涉及两个过程即求值过程和运算过程，求值过程都是从左到右，而运算过程有自己的运算顺序</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.x = a = &#123;n:<span class="number">2</span>&#125;;</span><br></pre></td></tr></table></figure>
 <p>这条语句中a.x a 和 {n:2}分别是三个表达式，需要先对他们求值，然后才会进行赋值操作，求值过程是先于赋值过程的</p>
+<a id="more"></a>
 <h3 id="u4E0B_u8868_u5217_u51FA_u4E86_JavaScript__u8FD0_u7B97_u7B26_uFF0C_u5E76_u6309_u4F18_u5148_u7EA7_u987A_u5E8F_u4ECE_u9AD8_u5230_u4F4E_u6392_u5217_u3002__u5177_u6709_u76F8_u540C_u4F18_u5148_u7EA7_u7684_u8FD0_u7B97_u7B26_u6309_u4ECE_u5DE6_u81F3_u53F3_u7684_u987A_u5E8F_u8BA1_u7B97"><a href="#u4E0B_u8868_u5217_u51FA_u4E86_JavaScript__u8FD0_u7B97_u7B26_uFF0C_u5E76_u6309_u4F18_u5148_u7EA7_u987A_u5E8F_u4ECE_u9AD8_u5230_u4F4E_u6392_u5217_u3002__u5177_u6709_u76F8_u540C_u4F18_u5148_u7EA7_u7684_u8FD0_u7B97_u7B26_u6309_u4ECE_u5DE6_u81F3_u53F3_u7684_u987A_u5E8F_u8BA1_u7B97" class="headerlink" title="下表列出了 JavaScript 运算符，并按优先级顺序从高到低排列。 具有相同优先级的运算符按从左至右的顺序计算"></a>下表列出了 JavaScript 运算符，并按优先级顺序从高到低排列。 具有相同优先级的运算符按从左至右的顺序计算</h3><table>
 <thead>
 <tr>
