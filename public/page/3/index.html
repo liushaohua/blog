@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Atom/" style="font-size: 10px;">Atom</a> <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/ECMAScript/" style="font-size: 10px;">ECMAScript</a> <a href="/tags/HTTP/" style="font-size: 13.33px;">HTTP</a> <a href="/tags/JavaScript设计模式/" style="font-size: 10px;">JavaScript设计模式</a> <a href="/tags/JavaScript运算符/" style="font-size: 10px;">JavaScript运算符</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Path/" style="font-size: 10px;">Path</a> <a href="/tags/Session/" style="font-size: 10px;">Session</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/Tcp/" style="font-size: 10px;">Tcp</a> <a href="/tags/ThinkJS/" style="font-size: 10px;">ThinkJS</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/个人随笔/" style="font-size: 16.67px;">个人随笔</a> <a href="/tags/前后端分离/" style="font-size: 10px;">前后端分离</a> <a href="/tags/喵星人/" style="font-size: 10px;">喵星人</a> <a href="/tags/小米智能摄像机/" style="font-size: 10px;">小米智能摄像机</a> <a href="/tags/年终总结/" style="font-size: 10px;">年终总结</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
+						<a href="/tags/Atom/" style="font-size: 10px;">Atom</a> <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/ECMAScript/" style="font-size: 10px;">ECMAScript</a> <a href="/tags/HTTP/" style="font-size: 13.33px;">HTTP</a> <a href="/tags/JavaScript设计模式/" style="font-size: 10px;">JavaScript设计模式</a> <a href="/tags/JavaScript运算符/" style="font-size: 10px;">JavaScript运算符</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a> <a href="/tags/Path/" style="font-size: 10px;">Path</a> <a href="/tags/Session/" style="font-size: 10px;">Session</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/Tcp/" style="font-size: 10px;">Tcp</a> <a href="/tags/ThinkJS/" style="font-size: 10px;">ThinkJS</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/个人随笔/" style="font-size: 16.67px;">个人随笔</a> <a href="/tags/函数自执行/" style="font-size: 10px;">函数自执行</a> <a href="/tags/前后端分离/" style="font-size: 10px;">前后端分离</a> <a href="/tags/喵星人/" style="font-size: 10px;">喵星人</a> <a href="/tags/小米智能摄像机/" style="font-size: 10px;">小米智能摄像机</a> <a href="/tags/年终总结/" style="font-size: 10px;">年终总结</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
 					</div>
 				</section>
 				
@@ -410,6 +410,63 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bower/">bower</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-unary_operator" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2012/06/17/unary_operator/" class="article-date">
+	<time datetime="2012-06-17T02:17:52.000Z" itemprop="datePublished">2012-06-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/06/17/unary_operator/">函数自执行-一元运算符</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</span><br><span class="line">~<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</span><br><span class="line">-<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</span><br><span class="line">+<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</span><br></pre></td></tr></table></figure>
+<p>叹号跟函数!function和+function 都是跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数自执行/">函数自执行</a></li></ul>
 	</div>
 
       
