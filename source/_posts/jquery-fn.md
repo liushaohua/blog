@@ -1,5 +1,5 @@
 title: 使用jQuery编写插件
-date: 2013-01-13 17:26:41
+date: 2012-01-13 17:26:41
 tags:
 	-jQuery插件
 ---
