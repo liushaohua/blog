@@ -4,21 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>函数自执行-一元运算符 | 厘澄的小站-专注前端开发</title>
+  <title>使用jQuery编写插件 | 厘澄的小站-专注前端开发</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234!function () &amp;#123; /* code */ &amp;#125; ();~function () &amp;#123; /* code */ &amp;#125; ();-function () &amp;#123; /* code */ &amp;#125; ();+function () &amp;#123; /* code */ &amp;#125; ();
-叹号跟函数!function和+function 都是跟(fu">
+  <meta name="description" content="面试题：封装一个jQuery插件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="函数自执行-一元运算符">
-<meta property="og:url" content="http://www.liushaohua.cn/2012/06/17/unary_operator/index.html">
+<meta property="og:title" content="使用jQuery编写插件">
+<meta property="og:url" content="http://www.liushaohua.cn/2013/01/13/jquery-fn/index.html">
 <meta property="og:site_name" content="厘澄的小站-专注前端开发">
-<meta property="og:description" content="1234!function () &amp;#123; /* code */ &amp;#125; ();~function () &amp;#123; /* code */ &amp;#125; ();-function () &amp;#123; /* code */ &amp;#125; ();+function () &amp;#123; /* code */ &amp;#125; ();
-叹号跟函数!function和+function 都是跟(fu">
-<meta property="og:updated_time" content="2016-05-17T02:20:05.529Z">
+<meta property="og:description" content="面试题：封装一个jQuery插件">
+<meta property="og:updated_time" content="2016-05-18T09:31:23.158Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="函数自执行-一元运算符">
-<meta name="twitter:description" content="1234!function () &amp;#123; /* code */ &amp;#125; ();~function () &amp;#123; /* code */ &amp;#125; ();-function () &amp;#123; /* code */ &amp;#125; ();+function () &amp;#123; /* code */ &amp;#125; ();
-叹号跟函数!function和+function 都是跟(fu">
+<meta name="twitter:title" content="使用jQuery编写插件">
+<meta name="twitter:description" content="面试题：封装一个jQuery插件">
   
   
     <link rel="icon" href="/favicon.png">
@@ -194,11 +191,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-unary_operator" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-jquery-fn" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2012/06/17/unary_operator/" class="article-date">
-	<time datetime="2012-06-17T02:17:52.000Z" itemprop="datePublished">2012-06-17</time>
+      <a href="/2013/01/13/jquery-fn/" class="article-date">
+	<time datetime="2013-01-13T09:26:41.000Z" itemprop="datePublished">2013-01-13</time>
 </a>
     </div>
   
@@ -209,7 +206,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      函数自执行-一元运算符
+      使用jQuery编写插件
     </h1>
   
 
@@ -219,7 +216,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数自执行/">函数自执行</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery插件/">-jQuery插件</a></li></ul>
 	</div>
 
         
@@ -230,8 +227,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</span><br><span class="line">~<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</span><br><span class="line">-<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</span><br><span class="line">+<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">/* code */</span> &#125; ();</span><br></pre></td></tr></table></figure>
-<p>叹号跟函数!function和+function 都是跟(function(){})();这个函数是一个意思，都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数</p>
+        <p>面试题：封装一个jQuery插件<br><a id="more"></a></p>
+<p>封装一个选项卡的jQuery插件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">jQuery.fn.tabs = <span class="function"><span class="keyword">function</span> (<span class="params">control</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> $element = $(<span class="keyword">this</span>),</span><br><span class="line">		$control = control;</span><br><span class="line">	</span><br><span class="line">	$element.on(<span class="string">'click'</span>,<span class="string">'[data-tab]'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> tabName = $(<span class="keyword">this</span>).attr(<span class="string">'data-tab'</span>);</span><br><span class="line">		$element.trigger(<span class="string">'change.tabs'</span>,tabName);</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	$element.on(<span class="string">'change.tabs'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e,tabName</span>) </span>&#123;</span><br><span class="line">		$element.find(<span class="string">'[data-tab]'</span>).removeClass(<span class="string">'active'</span>);</span><br><span class="line">		$element.find(<span class="string">'[data-tab="'</span>+tabName+<span class="string">'"]'</span>).addClass(<span class="string">'active'</span>);</span><br><span class="line">		<span class="built_in">window</span>.location.hash = tabName;</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	$element.on(<span class="string">'change.tabs'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e,tabName</span>) </span>&#123;</span><br><span class="line">		$control.find(<span class="string">'[data-tab]'</span>).removeClass(<span class="string">'active'</span>);</span><br><span class="line">		$control.find(<span class="string">'[data-tab="'</span>+tabName+<span class="string">'"]'</span>).addClass(<span class="string">'active'</span>);</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	$(<span class="built_in">window</span>).bind(<span class="string">'hashchange'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> tabName = <span class="built_in">window</span>.location.hash.slice(<span class="number">1</span>);</span><br><span class="line">		$element.trigger(<span class="string">'change.tabs'</span>,tabName);</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">var</span> firstName = $element.find(<span class="string">'[data-tab]'</span>).eq(<span class="number">0</span>).attr(<span class="string">'data-tab'</span>);</span><br><span class="line">	$element.trigger(<span class="string">'change.tabs'</span>,firstName);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">'#tabs'</span>).tabs($(<span class="string">'#content'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -241,15 +238,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2013/01/13/jquery-fn/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2013/02/01/bower/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          使用jQuery编写插件
+          指定bower安装目录
         
       </div>
     </a>
   
+  
+    <a href="/2012/06/17/unary_operator/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数自执行-一元运算符</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -263,7 +265,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="unary_operator" data-title="函数自执行-一元运算符" data-url="http://www.liushaohua.cn/2012/06/17/unary_operator/"></div>
+	<div class="ds-thread" data-thread-key="jquery-fn" data-title="使用jQuery编写插件" data-url="http://www.liushaohua.cn/2013/01/13/jquery-fn/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

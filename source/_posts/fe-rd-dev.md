@@ -22,4 +22,39 @@ tags:
 -----------------------
 ```
 
-这里的前端分为`Node`和`Browser`两层，`Node`层的前端主要负责API和controller相关开发，而Browser层的前端主要负责view和交互相关，由于和服务器交互的语言为`Node`，没有了其他语言的束缚，编写模板的时候就轻松多了。`Node`主要的功能还是起到了一个挡板代理的功能，轻量级的项目就由后端提供HTTP接口 or webSocket,Node层转发，不会存在跨域相关问题，而且可以把数据同步推到view层，也就不存在首屏渲染的问题了，如果是重型项目的话可以使用`Thrift`,`Thrift`支持多种语言之间的RPC方式的通信：Node语言client可以构造一个对象，调用相应的服务方法来调用java语言的服务 ，跨越语言的C/S  rpc调用,具体的使用方法大家可以自行Google下，而controller通常都是后端去写的，有了`Node`，就可以交给前端了，后端就可以专心的搞底层了。关于服务器部署这块，可以先暂时保留传统后端&Node,同时部署在机器上进行分流，部分机器Nginx配置规则让 Node.js 来处理相应请求，线上出现了问题的话直接对Nginx 配置进行回滚，待到测试完成再进行全量。当然这里面还会有一些其他要注意的地方和坑，这只是一个简略的思路而已，大神勿拍砖撒~~~
+这里的前端分为`Node`和`Browser`两层，`Node`层的前端主要负责API和controller相关开发，而Browser层的前端主要负责view和交互相关，由于和服务器交互的语言为`Node`，没有了其他语言的束缚，编写模板的时候就轻松多了。`Node`主要的功能还是起到了一个挡板代理的功能，轻量级的项目就由后端提供HTTP接口 or webSocket,Node层转发，不会存在跨域相关问题，而且可以把数据同步推到view层，也就不存在首屏渲染的问题了.
+```javascript
+var http = require('http'),
+    httpProxy = require('http-proxy');
+
+var proxy = httpProxy.createProxyServer();
+
+http.createServer(function (req, res) {
+
+  if (/\/api\/.*$/.test(req.url)) {
+	setTimeout(function () {
+		proxy.web(req, res, {
+		  target: 'http://localhost:9008'
+		});
+	  }, 500);
+  } else {
+	res.write('hello');
+	res.end();
+  }
+  
+}).listen(8008);
+
+//
+// 目标服务器
+//
+http.createServer(function (req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.write('request successfully proxied to: ' + req.url + '\n' + JSON.stringify(req.headers, true, 2));
+  res.end();
+}).listen(9008);
+```
+
+### 重型项目
+
+如果是重型项目的话可以使用`Thrift`,`Thrift`支持多种语言之间的RPC方式的通信：Node语言client可以构造一个对象，调用相应的服务方法来调用java语言的服务 ，跨越语言的C/S  rpc调用,具体的使用方法大家可以自行Google下，而controller通常都是后端去写的，有了`Node`，就可以交给前端了，后端就可以专心的搞底层了。关于服务器部署这块，可以先暂时保留传统后端&Node,同时部署在机器上进行分流，部分机器Nginx配置规则让 Node.js 来处理相应请求，线上出现了问题的话直接对Nginx 配置进行回滚，待到测试完成再进行全量。当然这里面还会有一些其他要注意的地方和坑，这只是一个简略的思路而已，大神勿拍砖撒~~~
+

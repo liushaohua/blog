@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.liushaohua.cn/2013/01/13/jquery-fn/</loc>
+    <lastmod>2016-05-18T09:31:23.158Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.liushaohua.cn/2014/06/13/fe-rd-dev/</loc>
+    <lastmod>2016-05-18T01:32:26.620Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.liushaohua.cn/2012/06/17/unary_operator/</loc>
     <lastmod>2016-05-17T02:20:05.529Z</lastmod>
   </url>
@@ -14,11 +24,6 @@
   <url>
     <loc>http://www.liushaohua.cn/2013/05/13/JavaScript-operator/</loc>
     <lastmod>2016-05-13T03:22:45.054Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.liushaohua.cn/2014/06/13/fe-rd-dev/</loc>
-    <lastmod>2016-05-12T11:00:54.853Z</lastmod>
   </url>
   
   <url>
