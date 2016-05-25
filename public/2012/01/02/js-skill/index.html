@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: ECMAScript | 厘澄的小站-专注前端开发</title>
+  <title>JavaScript小技巧 | 厘澄的小站-专注前端开发</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="厘澄个人博客，现居北京，专业猫咪铲屎官，专注web前端开发、用户体验设计">
-<meta property="og:type" content="website">
-<meta property="og:title" content="厘澄的小站-专注前端开发">
-<meta property="og:url" content="http://www.liushaohua.cn/tags/ECMAScript/index.html">
+  <meta name="description" content="大家经常看到这样的代码:123456789101112131415161718192021var score = &apos;A&apos;,	$btn = $(&apos;btn&apos;);if (score == &apos;A&apos;) &amp;#123;	$btn.html(&apos;您得到20元钱&apos;);	...&amp;#125;if (score == &apos;B&apos;) &amp;#123;	$btn.html(&apos;您得到10元钱&apos;);	...&amp;#125;if (score">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript小技巧">
+<meta property="og:url" content="http://www.liushaohua.cn/2012/01/02/js-skill/index.html">
 <meta property="og:site_name" content="厘澄的小站-专注前端开发">
-<meta property="og:description" content="厘澄个人博客，现居北京，专业猫咪铲屎官，专注web前端开发、用户体验设计">
+<meta property="og:description" content="大家经常看到这样的代码:123456789101112131415161718192021var score = &apos;A&apos;,	$btn = $(&apos;btn&apos;);if (score == &apos;A&apos;) &amp;#123;	$btn.html(&apos;您得到20元钱&apos;);	...&amp;#125;if (score == &apos;B&apos;) &amp;#123;	$btn.html(&apos;您得到10元钱&apos;);	...&amp;#125;if (score">
+<meta property="og:updated_time" content="2016-05-25T08:53:59.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="厘澄的小站-专注前端开发">
-<meta name="twitter:description" content="厘澄个人博客，现居北京，专业猫咪铲屎官，专注web前端开发、用户体验设计">
+<meta name="twitter:title" content="JavaScript小技巧">
+<meta name="twitter:description" content="大家经常看到这样的代码:123456789101112131415161718192021var score = &apos;A&apos;,	$btn = $(&apos;btn&apos;);if (score == &apos;A&apos;) &amp;#123;	$btn.html(&apos;您得到20元钱&apos;);	...&amp;#125;if (score == &apos;B&apos;) &amp;#123;	$btn.html(&apos;您得到10元钱&apos;);	...&amp;#125;if (score">
   
   
     <link rel="icon" href="/favicon.png">
@@ -190,54 +191,96 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-js-skill" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/01/26/ECMAScript学习笔记/" class="archive-article-date">
-	<time datetime="2016-01-26T06:13:51.000Z" itemprop="datePublished">Jan 26</time>
+    <div class="article-meta">
+      <a href="/2012/01/02/js-skill/" class="article-date">
+	<time datetime="2012-01-02T08:45:54.000Z" itemprop="datePublished">2012-01-02</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/26/ECMAScript学习笔记/">ECMAScript学习笔记</a>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript小技巧
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECMAScript/">ECMAScript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript小技巧/">JavaScript小技巧</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>大家经常看到这样的代码:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> score = <span class="string">'A'</span>,</span><br><span class="line">	$btn = $(<span class="string">'btn'</span>);</span><br><span class="line"><span class="keyword">if</span> (score == <span class="string">'A'</span>) &#123;</span><br><span class="line">	$btn.html(<span class="string">'您得到20元钱'</span>);</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (score == <span class="string">'B'</span>) &#123;</span><br><span class="line">	$btn.html(<span class="string">'您得到10元钱'</span>);</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (score == <span class="string">'C'</span>) &#123;</span><br><span class="line">	$btn.html(<span class="string">'您得到5元钱'</span>);</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (score == <span class="string">'D'</span>) &#123;</span><br><span class="line">	$btn.html(<span class="string">'您得到1元钱'</span>);</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>zxx: 这么多的<code>if</code>，好伤神，有啥解决方案呢，直接来</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scoreObj = &#123;</span><br><span class="line">		<span class="string">'A'</span>: <span class="string">'20'</span>,</span><br><span class="line">		<span class="string">'B'</span>: <span class="string">'10'</span>,</span><br><span class="line">		<span class="string">'C'</span>: <span class="string">'5'</span>,</span><br><span class="line">		<span class="string">'D'</span>: <span class="string">'1'</span></span><br><span class="line">	&#125;,</span><br><span class="line">	score = <span class="string">'A'</span>,</span><br><span class="line">	$btn = $(<span class="string">'btn'</span>);</span><br><span class="line"></span><br><span class="line">	$btn.html(<span class="string">'您得到'</span>+ scoreObj[<span class="string">'score'</span>] +<span class="string">'元钱'</span>);</span><br></pre></td></tr></table></figure>
+<p>是不是变得清爽多了，哇嘎嘎</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2012/01/13/jquery-fn/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          使用jQuery编写插件
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js-skill" data-title="JavaScript小技巧" data-url="http://www.liushaohua.cn/2012/01/02/js-skill/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"shaohua5945"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//liushaohua.cn/js/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -262,9 +305,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
